@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Umer Iqbal — Full-Stack JavaScript Developer (MERN & Next.js)',
+  title: 'Umer Iqbal — Full-Stack Web Developer (MERN & Next.js)',
   description:
     'Portfolio of Umer Iqbal, a full-stack web developer specializing in building modern, high-performance web applications with Next.js.',
 };
