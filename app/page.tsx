@@ -255,9 +255,7 @@ export default function Personal() {
           {WORK_EXPERIENCE.map((job) => (
             <Link
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/experience/${job.id}`}
               key={job.id}
             >
               <Spotlight
@@ -273,14 +271,6 @@ export default function Personal() {
                     <p className="text-zinc-500 dark:text-zinc-400">
                       {job.company}
                     </p>
-                    <ul className="mt-2 text-sm text-zinc-500 dark:text-zinc-400 space-y-1">
-                      {job.description.split('.').filter((point) => point.trim().length > 0).map((point, index) => (
-                        <li key={index} className="flex items-start">
-                          <span className="mr-2 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" />
-                          <span>{point.trim()}.</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                   <p className="text-zinc-600 dark:text-zinc-400">
                     {job.start} - {job.end}
