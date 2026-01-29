@@ -54,7 +54,7 @@ export function InteractiveParticles() {
                     y,
                     baseX: x,
                     baseY: y,
-                    size: Math.random() * 1.5 * z, // Increased size for better visibility
+                    size: Math.random() * 2.5 * z, // Increased size for better visibility
                     vx: (Math.random() - 0.5) * 0.4 * z,
                     vy: (Math.random() - 0.5) * 0.4 * z,
                     density: (Math.random() * 30) + 1,

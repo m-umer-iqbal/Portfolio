@@ -13,6 +13,7 @@ import {
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
+import { Mail, ArrowRight } from 'lucide-react'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -94,7 +95,7 @@ function MagneticSocialLink({
   link: string
 }) {
   return (
-    <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
+    <Magnetic springOptions={{ bounce: 0.1 }} intensity={0.2}>
       <Link
         href={link}
         target="_blank"
@@ -167,9 +168,8 @@ export default function Personal() {
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
-        id="about"
       >
-        <h3 className="mb-5 text-2xl font-medium bg-white dark:bg-black inline-block px-2">About Me</h3>
+        <h3 className="mb-5 text-2xl font-medium bg-white dark:bg-black inline-block px-2">About</h3>
         <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
           <div className="flex-1 space-y-4 text-center md:text-left">
             <p className="text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black px-1">
@@ -197,9 +197,7 @@ export default function Personal() {
 
       <motion.section
         variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-        id="projects"
-      >
+        transition={TRANSITION_SECTION}>
         <h3 className="mb-5 text-2xl font-medium bg-white dark:bg-black inline-block px-2">Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
@@ -227,10 +225,8 @@ export default function Personal() {
 
       <motion.section
         variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-        id="skills"
-      >
-        <h3 className="mb-8 text-2xl font-medium bg-white dark:bg-black inline-block px-2">My Skills</h3>
+        transition={TRANSITION_SECTION}>
+        <h3 className="mb-8 text-2xl font-medium bg-white dark:bg-black inline-block px-2">Skills</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
           {categories.map((category) => (
             <div key={category} className="space-y-4">
@@ -254,8 +250,7 @@ export default function Personal() {
 
       <motion.section
         variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-        id="experience">
+        transition={TRANSITION_SECTION}>
         <h3 className="mb-5 text-2xl font-medium">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
@@ -291,21 +286,66 @@ export default function Personal() {
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
-        id="contact"
-      >
-        <h3 className="mb-5 text-2xl font-medium bg-white dark:bg-black inline-block px-2">Contact Me</h3>
-        <p className="mb-5 text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black px-1">
-          Feel free to contact me at{' '}
-          <Link className="underline dark:text-zinc-300 hover:text-black dark:hover:text-white bg-white dark:bg-black px-1" href={`mailto:${EMAIL}`}>
-            {EMAIL}
-          </Link>
-        </p>
-        <div className="flex items-center justify-start space-x-4">
-          {SOCIAL_LINKS.map((link) => (
-            <MagneticSocialLink key={link.label} link={link.link}>
-              {link.label}
-            </MagneticSocialLink>
-          ))}
+        className="pb-0">
+        <h3 className="mb-8 text-2xl font-medium bg-white dark:bg-black inline-block px-2">Contact</h3>
+
+        <div className="relative overflow-hidden rounded-3xl bg-zinc-200/80 dark:bg-zinc-800/80 p-8 md:p-12 ring-1 ring-zinc-300/50 dark:ring-zinc-700/50 backdrop-blur-md transition-all duration-500 hover:ring-zinc-400/50 dark:hover:ring-zinc-600/50 hover:shadow-2xl hover:shadow-zinc-500/20 dark:hover:shadow-zinc-100/10">
+
+          {/* Animated Background Gradients */}
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+              x: [0, 20, 0],
+              y: [0, -20, 0]
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-zinc-400/20 blur-3xl dark:bg-zinc-600/20"
+          />
+          <motion.div
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.6, 0.3],
+              x: [0, -30, 0],
+              y: [0, 30, 0]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-zinc-500/20 blur-3xl dark:bg-zinc-500/20"
+          />
+
+          {/* Noise Texture Overlay */}
+          <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
+
+          <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
+            <div className="space-y-4 max-w-lg">
+              <h4 className="text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+                Let&apos;s build something <span className="bg-gradient-to-r from-zinc-500 to-black bg-clip-text text-transparent dark:from-zinc-400 dark:to-white">amazing</span> together.
+              </h4>
+              <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                I&apos;m currently available for freelance projects and open to full-time opportunities. Reach out if you have a project in mind or just want to say hi!
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-6 w-full md:w-auto items-start md:items-end">
+              <Link
+                href={`mailto:${EMAIL}`}
+                target="_blank"
+                className="group relative flex items-center justify-center gap-3 rounded-2xl bg-zinc-900 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 shadow-xl shadow-zinc-900/20 dark:shadow-zinc-100/10 overflow-hidden">
+                <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 dark:via-black/10 to-transparent z-10" />
+                <Mail className="h-5 w-5 relative z-20" />
+                <span className="relative z-20">{EMAIL}</span>
+                <ArrowRight className="h-4 w-4 relative z-20 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+
+              <div className="flex flex-wrap gap-3">
+                {SOCIAL_LINKS.map((link) => (
+                  <MagneticSocialLink key={link.label} link={link.link}>
+                    {link.label}
+                  </MagneticSocialLink>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </motion.section>
     </motion.main>
