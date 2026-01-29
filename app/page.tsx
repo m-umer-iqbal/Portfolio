@@ -39,7 +39,7 @@ function truncateWords(text: string, wordLimit: number) {
   return words.slice(0, wordLimit).join(' ') + '...'
 }
 
-function ProjectVideo({ src }: { src: string }) {
+function ProjectVideo({ src, thumbnail }: { src: string; thumbnail: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isHovered, setIsHovered] = useState(false)
 
@@ -66,11 +66,17 @@ function ProjectVideo({ src }: { src: string }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      <Image
+        src={thumbnail}
+        alt="Project thumbnail"
+        fill
+        className={`object-cover transition-opacity duration-500 z-20 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
+        priority
+      />
       <video
         ref={videoRef}
         src={src}
-        className={`h-full w-full object-cover transition-transform duration-700 ${isHovered ? 'scale-105' : 'scale-100'
-          }`}
+        className="absolute inset-0 h-full w-full object-cover z-10"
         muted
         loop
         playsInline
@@ -203,7 +209,7 @@ export default function Personal() {
               className="group space-y-2 focus:outline-none"
             >
               <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
+                <ProjectVideo src={project.video} thumbnail={project.thumbnail} />
               </div>
               <div className="px-1">
                 <div className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50 bg-white dark:bg-black px-1">

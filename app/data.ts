@@ -6,6 +6,7 @@ type Project = {
   id: string
   github?: string
   demo?: string
+  thumbnail: string
 }
 
 type WorkExperience = {
@@ -37,40 +38,44 @@ export const PROJECTS: Project[] = [
     description:
       'A comprehensive real-time project management tool with advanced drag-and-drop functionality, team collaboration features, and customizable workflows. This dashboard integrates with multiple productivity tools and provides detailed analytics on team performance, project timelines, and resource allocation. Built with React, Node.js, and WebSocket technology for real-time updates, it supports multiple project views including Kanban boards, Gantt charts, and calendar timelines. The platform includes automated reporting, deadline tracking, and integration with popular tools like Slack, Jira, and Google Workspace.',
     link: '/projects/project1',
-    video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4#t=0.1',
+    video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1/URL-to-url-converter-video_ws2pex.mp4',
     id: 'project1',
-    github: 'https://github.com',
+    github: 'https://github.com/m-umer-iqbal/P24-Next-URL-to-url-Converter',
     demo: 'https://example.com',
+    thumbnail: '/project1.jpeg',
   },
   {
     name: 'Barely Social',
     description:
       'An innovative platform leveraging state-of-the-art machine learning models to generate high-quality blog posts, social media content, marketing copy, and technical documentation. The system uses GPT-based architectures fine-tuned on domain-specific datasets, offering content suggestions, tone adjustment, and SEO optimization features. With a user-friendly interface and advanced customization options, users can generate content in multiple languages, maintain brand voice consistency, and access a library of templates for various content types. The platform includes plagiarism checking, readability scoring, and collaboration tools for content teams.',
     link: '/projects/project2',
-    video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4#t=0.1',
+    video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769720764/Barely-Social-video_ykqzwm.mp4',
     id: 'project2',
-    github: 'https://github.com',
+    github: 'https://github.com/m-umer-iqbal/P23-React-Barely-Social',
     demo: 'https://example.com',
+    thumbnail: '/project2.jpeg',
   },
   {
-    name: 'Daily Journal',
+    name: 'Blog Space',
     description:
       'An interactive educational tool for visualizing complex neural network architectures, training processes, and data flows in real-time. This application allows users to build custom neural networks through a drag-and-drop interface, visualize activation functions, weight distributions, and gradient flows during training. Supporting multiple network types including CNNs, RNNs, and Transformers, it provides detailed insights into model behavior, feature extraction, and decision-making processes. The tool includes datasets for experimentation, pre-trained model exploration, and export capabilities for research and educational purposes. Perfect for students, researchers, and AI enthusiasts.',
     link: '/projects/project3',
-    video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4#t=0.1',
+    video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769723312/Blog-Space-video_nbaong.mp4',
     id: 'project3',
-    github: 'https://github.com',
+    github: 'https://github.com/m-umer-iqbal/P20-MongoDB-Mongoose-Blog-Space',
     demo: 'https://example.com',
+    thumbnail: '/project3.jpeg',
   },
   {
     name: 'Melodify',
     description:
       'A comprehensive IoT dashboard for managing smart home devices with automated routines, energy consumption tracking, and predictive maintenance. This system integrates with over 200 IoT devices from various manufacturers, providing a unified interface for lighting, security, climate control, and entertainment systems. Features include voice command integration, geofencing-based automation, energy usage analytics with cost projections, and AI-powered suggestions for optimization. The platform offers remote access, family member permissions, and detailed activity logs with anomaly detection for enhanced security and efficiency.',
     link: '/projects/project4',
-    video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4#t=0.1',
+    video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769723927/Melodify-video_n8aqtv.mp4',
     id: 'project4',
-    github: 'https://github.com',
+    github: 'https://github.com/m-umer-iqbal/P14-Melodify',
     demo: 'https://example.com',
+    thumbnail: '/project4.jpeg',
   },
 ]
 
