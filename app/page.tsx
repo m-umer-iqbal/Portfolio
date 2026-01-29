@@ -231,7 +231,7 @@ export default function Personal() {
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 bg-white dark:bg-black inline-block px-1">
                 {category}
               </h4>
-              <div className="flex flex-col gap-2 bg-white dark:bg-black">
+              <div className="flex flex-col gap-2">
                 {SKILLS.filter(s => s.category === category).map((skill) => (
                   <SkillBadge
                     key={skill.name}
@@ -273,6 +273,14 @@ export default function Personal() {
                     <p className="text-zinc-500 dark:text-zinc-400">
                       {job.company}
                     </p>
+                    <ul className="mt-2 text-sm text-zinc-500 dark:text-zinc-400 space-y-1">
+                      {job.description.split('.').filter((point) => point.trim().length > 0).map((point, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="mr-2 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-600" />
+                          <span>{point.trim()}.</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                   <p className="text-zinc-600 dark:text-zinc-400">
                     {job.start} - {job.end}
