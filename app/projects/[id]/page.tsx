@@ -219,7 +219,7 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
 
     return (
         <motion.main
-            className="space-y-12 pb-24"
+            className="space-y-12"
             variants={VARIANTS_CONTAINER}
             initial="hidden"
             animate="visible"
@@ -233,7 +233,7 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
                     Back to Home
                 </button>
 
-                <h1 className="text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl bg-white dark:bg-black">
+                <h1 className="inline-block text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl bg-white dark:bg-black">
                     {project.name}
                 </h1>
             </motion.div>
@@ -248,39 +248,148 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
 
             <motion.section
                 variants={VARIANTS_SECTION}
-                transition={TRANSITION_SECTION}>
-                <div>
-                    <h2 className="mb-4 text-xl font-medium text-zinc-900 dark:text-zinc-100 bg-white dark:bg-black">
-                        About the Project
-                    </h2>
-                    <p className="mb-8 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black">
-                        {project.description}
-                    </p>
-                </div>
+                transition={TRANSITION_SECTION}
+                className="space-y-8">
+                {project.detailedDescription && project.detailedDescription.length > 0 ? (
+                    // Structured layout for projects with detailedDescription
+                    <div className="space-y-8">
+                        <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 inline-block bg-white dark:bg-black">
+                            About the Project
+                        </h2>
 
-                <div className="flex flex-wrap gap-4">
-                    {project.github && (
-                        <Link
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 text-sm font-medium text-zinc-50 transition-all hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
-                        >
-                            <Github className="h-4 w-4" />
-                            Source Code
-                        </Link>
-                    )}
-                    {project.demo && (
-                        <Link
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-6 py-3 text-sm font-medium text-zinc-900 ring-1 ring-zinc-200 transition-all hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:ring-zinc-700 dark:hover:bg-zinc-700"
-                        >
-                            <ExternalLink className="h-4 w-4" />
-                            Live Demo
-                        </Link>
-                    )}
+                        <div className="space-y-8 text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black">
+                            {project.detailedDescription.map((section, index) => {
+                                switch (section.type) {
+                                    case 'paragraph':
+                                        return (
+                                            <div key={index}>
+                                                <p className="text-lg leading-relaxed">{section.content}</p>
+                                            </div>
+                                        );
+
+                                    case 'highlight':
+                                        return (
+                                            <div key={index} className="space-y-6">
+                                                {section.title && (
+                                                    <h3 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+                                                        {section.title}
+                                                    </h3>
+                                                )}
+                                                <div className="space-y-6">
+                                                    {section.categories?.map((category, categoryIndex) => (
+                                                        <div key={categoryIndex} className="space-y-3">
+                                                            <h4 className="font-medium text-zinc-800 dark:text-zinc-200">
+                                                                {category.title}
+                                                            </h4>
+                                                            <ul className="space-y-2 pl-6">
+                                                                {category.items.map((item, itemIndex) => (
+                                                                    <li key={itemIndex} className="text-zinc-600 dark:text-zinc-400">
+                                                                        • {item}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        );
+
+                                    case 'technical':
+                                        return (
+                                            <div key={index} className="space-y-4">
+                                                {section.title && (
+                                                    <h3 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+                                                        {section.title}
+                                                    </h3>
+                                                )}
+                                                {section.content && <p className="text-zinc-700 dark:text-zinc-300">{section.content}</p>}
+                                                {section.items && (
+                                                    <ul className="space-y-2 pl-6">
+                                                        {section.items.map((item, itemIndex) => (
+                                                            <li key={itemIndex} className="text-zinc-600 dark:text-zinc-400">
+                                                                • {item}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </div>
+                                        );
+
+                                    case 'use-cases':
+                                        return (
+                                            <div key={index} className="space-y-4">
+                                                {section.title && (
+                                                    <h3 className="text-xl font-medium text-zinc-900 dark:text-zinc-100">
+                                                        {section.title}
+                                                    </h3>
+                                                )}
+                                                <div className="space-y-3">
+                                                    {section.categories?.map((category, categoryIndex) => (
+                                                        <div key={categoryIndex}>
+                                                            <h4 className="font-medium text-zinc-800 dark:text-zinc-200 mb-1">
+                                                                {category.title}
+                                                            </h4>
+                                                            <p className="text-zinc-600 dark:text-zinc-400">
+                                                                {category.items.join(', ')}
+                                                            </p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        );
+
+                                    case 'impact':
+                                        return (
+                                            <div key={index} className="pt-4 mt-4 border-t border-zinc-200 dark:border-zinc-800">
+                                                <p className="text-zinc-600 dark:text-zinc-400">
+                                                    {section.content}
+                                                </p>
+                                            </div>
+                                        );
+
+                                    default:
+                                        return null;
+                                }
+                            })}
+                        </div>
+                    </div>
+                ) : (
+                    // Default simple layout for projects without detailedDescription
+                    <div>
+                        <h2 className="mb-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+                            About the Project
+                        </h2>
+                        <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+                            {project.description}
+                        </p>
+                    </div>
+                )}
+
+                <div className="pt-6 mt-6">
+                    <div className="flex flex-wrap gap-3">
+                        {project.github && (
+                            <Link
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-full bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                            >
+                                <Github className="h-4 w-4" />
+                                Source Code
+                            </Link>
+                        )}
+                        {project.demo && (
+                            <Link
+                                href={project.demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-full bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+                            >
+                                <ExternalLink className="h-4 w-4" />
+                                Live Demo
+                            </Link>
+                        )}
+                    </div>
                 </div>
             </motion.section>
         </motion.main>

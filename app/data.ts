@@ -1,15 +1,27 @@
+type ProjectSection = {
+  title?: string;
+  content?: string;
+  type: 'paragraph' | 'list' | 'highlight' | 'use-cases' | 'technical' | 'impact';
+  items?: string[];
+  categories?: Array<{
+    title: string;
+    items: string[];
+  }>;
+};
+
 type Project = {
-  name: string
-  description: string
-  link: string
-  video: string
-  id: string
-  github?: string
-  demo?: string
+  name: string;
+  description: string;
+  detailedDescription?: ProjectSection[]; // Add this for structured content
+  link: string;
+  video: string;
+  id: string;
+  github?: string;
+  demo?: string;
   thumbnail: {
-    light: string
-    dark: string
-  }
+    light: string;
+    dark: string;
+  };
 }
 
 type WorkExperience = {
@@ -38,8 +50,108 @@ type SocialLink = {
 export const PROJECTS: Project[] = [
   {
     name: 'URL to url Converter',
-    description:
-      'A comprehensive real-time project management tool with advanced drag-and-drop functionality, team collaboration features, and customizable workflows. This dashboard integrates with multiple productivity tools and provides detailed analytics on team performance, project timelines, and resource allocation. Built with React, Node.js, and WebSocket technology for real-time updates, it supports multiple project views including Kanban boards, Gantt charts, and calendar timelines. The platform includes automated reporting, deadline tracking, and integration with popular tools like Slack, Jira, and Google Workspace.',
+    description: 'URL Shortening And Management Application',
+    detailedDescription: [
+      {
+        type: 'paragraph',
+        content: 'A modern, full-stack URL shortening and management application built with Next.js 15, MongoDB, and NextAuth. Transform long, cumbersome URLs into sleek, memorable links with custom aliases and full analytics.'
+      },
+      {
+        type: 'highlight',
+        title: '✨ Features',
+        categories: [
+          {
+            title: 'Core Functionality',
+            items: [
+              'Custom Short URLs: Choose your own "preferred word" aliases for meaningful links',
+              'Personal Dashboard: Manage all your converted links in one place',
+              'Real-time Editing: Update your original URLs or aliases on the fly',
+              'Copy-to-Clipboard: One-click sharing functionality'
+            ]
+          },
+          {
+            title: 'User Experience',
+            items: [
+              'Responsive Design: Beautifully crafted with Tailwind CSS for seamless use on any device',
+              'Interactive UI: Uses Lordicons for smooth, premium micro-animations',
+              'Profile Management: Customize your public profile with name, username, and Cloudinary-powered avatar uploads'
+            ]
+          },
+          {
+            title: 'Security & Authentication',
+            items: [
+              'Social Authentication: Secure sign-in via Google, GitHub, LinkedIn, and Facebook using NextAuth',
+              'Protected Routes: Role-based access control for user data',
+              'Session Management: Secure cookie-based authentication system'
+            ]
+          }
+        ]
+      },
+      {
+        type: 'technical',
+        title: '🚀 Tech Stack',
+        content: 'Built with modern web technologies for optimal performance and scalability:',
+        items: [
+          'Framework: Next.js 15 (App Router) with React 19',
+          'Styling: Tailwind CSS for utility-first responsive design',
+          'Database: MongoDB with Mongoose ODM for data modeling',
+          'Authentication: NextAuth.js with multiple OAuth providers',
+          'Image Hosting: Cloudinary for secure avatar uploads and transformations',
+          'Animations: Lordicon for premium micro-animations',
+          'Icons: Lucide React / SVG for consistent iconography',
+          'Notifications: React-Toastify for user feedback'
+        ]
+      },
+      {
+        type: 'technical',
+        title: '🏗️ Architecture',
+        content: 'Clean project structure following Next.js best practices:',
+        items: [
+          'App Router: Next.js 15 App Router for modern routing and layouts',
+          'API Routes: Backend API endpoints for URL management and user operations',
+          'Dynamic Routing: [preferWord]/ for URL redirection logic',
+          'Layouts: Consistent layout structure across all pages',
+          'Components: Reusable UI components (Header, Footer, etc.)',
+          'Context: React Context API for global state management',
+          'Models: Mongoose schemas for database structure',
+          'Lib: Helper functions and utilities'
+        ]
+      },
+      {
+        type: 'use-cases',
+        title: '🎯 Target Users',
+        categories: [
+          {
+            title: 'For Businesses & Marketers',
+            items: [
+              'Create branded short links for marketing campaigns',
+              'Track link performance and user engagement',
+              'Share clean, professional URLs on social media'
+            ]
+          },
+          {
+            title: 'For Developers & Teams',
+            items: [
+              'Simplify API documentation links',
+              'Share development resources and tools',
+              'Create memorable URLs for project deployments'
+            ]
+          },
+          {
+            title: 'For Everyday Users',
+            items: [
+              'Shorten long article and video links',
+              'Create personal bookmark collections',
+              'Share files and resources with easy-to-remember URLs'
+            ]
+          }
+        ]
+      },
+      {
+        type: 'impact',
+        content: 'This project demonstrates expertise in modern full-stack development with Next.js, showcasing production-ready features like authentication, database integration, and responsive design while solving real-world problems of URL management.'
+      }
+    ],
     link: '/projects/project1',
     video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1/URL-to-url-converter-video_ws2pex.mp4',
     id: 'project1',
@@ -52,8 +164,96 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Barely Social',
-    description:
-      'An innovative platform leveraging state-of-the-art machine learning models to generate high-quality blog posts, social media content, marketing copy, and technical documentation. The system uses GPT-based architectures fine-tuned on domain-specific datasets, offering content suggestions, tone adjustment, and SEO optimization features. With a user-friendly interface and advanced customization options, users can generate content in multiple languages, maintain brand voice consistency, and access a library of templates for various content types. The platform includes plagiarism checking, readability scoring, and collaboration tools for content teams.',
+    description: 'A full-stack social media platform built with the MERN stack featuring user authentication, post creation, and follow functionality.',
+    detailedDescription: [
+      {
+        type: 'paragraph',
+        content: 'Barely Social is a full-stack social media web application built with the MERN stack (MongoDB, Express, React, Node.js). This platform allows users to connect, share content, and interact with each other through posts, likes, and following systems.'
+      },
+      {
+        type: 'highlight',
+        title: '🚀 Key Features',
+        categories: [
+          {
+            title: 'User Authentication & Security',
+            items: [
+              'Email-based registration and login system',
+              'Social login via Google, Facebook, and GitHub using Passport.js',
+              'Session-based authentication with secure cookies',
+              'Protected routes and API endpoints'
+            ]
+          },
+          {
+            title: 'Social Media Functionality',
+            items: [
+              'Create, edit, and delete posts with text content',
+              'Upload images to posts using Cloudinary integration',
+              'Like/dislike posts anonymously',
+              'Real-time post updates and interactions'
+            ]
+          },
+          {
+            title: 'User Connectivity',
+            items: [
+              'Follow/unfollow other users',
+              'Dual feed system: "Following" feed and "Strangers" feed',
+              'Profile viewing with user bio and activity',
+              'Personalized content based on connections'
+            ]
+          },
+          {
+            title: 'Profile Management',
+            items: [
+              'Update personal information (name, bio, email)',
+              'Upload and change profile pictures',
+              'View personal post history and activity',
+              'Track followers and following count'
+            ]
+          }
+        ]
+      },
+      {
+        type: 'technical',
+        title: '🔧 Technical Implementation',
+        content: 'This project demonstrates comprehensive full-stack development with modern technologies:',
+        items: [
+          'Frontend: React.js with functional components and hooks',
+          'Backend: Node.js & Express.js RESTful API architecture',
+          'Database: MongoDB with Mongoose ODM for data modeling',
+          'Authentication: Passport.js for multi-provider OAuth',
+          'File Uploads: Cloudinary + Multer for image processing',
+          'State Management: React Context API & useState hooks',
+          'Styling: Custom CSS with responsive design principles',
+          'Security: Environment variables, session management, and input validation'
+        ]
+      },
+      {
+        type: 'use-cases',
+        title: '🎯 Learning Outcomes',
+        categories: [
+          {
+            title: 'Full-Stack Development',
+            items: ['Built complete CRUD operations for posts and users', 'Implemented RESTful API endpoints', 'Connected frontend and backend seamlessly']
+          },
+          {
+            title: 'Authentication Systems',
+            items: ['Implemented session-based authentication', 'Integrated multiple OAuth providers', 'Managed user sessions and security']
+          },
+          {
+            title: 'Database Design',
+            items: ['Designed MongoDB schemas for users and posts', 'Implemented relationships between collections', 'Optimized queries for performance']
+          },
+          {
+            title: 'File Handling',
+            items: ['Processed image uploads client and server-side', 'Integrated Cloudinary for cloud storage', 'Optimized images for web delivery']
+          }
+        ]
+      },
+      {
+        type: 'impact',
+        content: 'This project showcases my ability to build complex, full-stack applications with real-world features, emphasizing clean architecture, security best practices, and user-centric design principles.'
+      }
+    ],
     link: '/projects/project2',
     video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769720764/Barely-Social-video_ykqzwm.mp4',
     id: 'project2',
@@ -66,8 +266,147 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Blog Space',
-    description:
-      'An interactive educational tool for visualizing complex neural network architectures, training processes, and data flows in real-time. This application allows users to build custom neural networks through a drag-and-drop interface, visualize activation functions, weight distributions, and gradient flows during training. Supporting multiple network types including CNNs, RNNs, and Transformers, it provides detailed insights into model behavior, feature extraction, and decision-making processes. The tool includes datasets for experimentation, pre-trained model exploration, and export capabilities for research and educational purposes. Perfect for students, researchers, and AI enthusiasts.',
+    description: 'A full-featured blogging platform built with Node.js, Express, EJS, and MongoDB, featuring complete CRUD operations and a responsive design.',
+    detailedDescription: [
+      {
+        type: 'paragraph',
+        content: 'Blog Space is a complete blogging application that allows users to create, publish, and manage blog posts with an intuitive interface. Built with traditional server-side rendering using EJS templates, it provides a seamless content management experience with full CRUD functionality.'
+      },
+      {
+        type: 'highlight',
+        title: '📝 Blog Management Features',
+        categories: [
+          {
+            title: 'Content Operations',
+            items: [
+              'Create new blog posts with rich text content',
+              'Read and view published articles with clean layouts',
+              'Update existing posts with in-place editing functionality',
+              'Delete posts with confirmation for data integrity'
+            ]
+          },
+          {
+            title: 'User Experience',
+            items: [
+              'In-place editing without page reloads',
+              'Clean, organized homepage displaying all posts',
+              'SEO-friendly URLs using automatic slug generation',
+              'Responsive design for all device sizes'
+            ]
+          },
+          {
+            title: 'Content Organization',
+            items: [
+              'Categorization and tagging system for posts',
+              'Search functionality for finding content',
+              'Pagination for handling large numbers of posts',
+              'Post status management (draft/published)'
+            ]
+          }
+        ]
+      },
+      {
+        type: 'technical',
+        title: '🔧 Full-Stack Architecture',
+        content: 'Built with a traditional but powerful tech stack focusing on server-side rendering:',
+        items: [
+          'Backend: Node.js runtime with Express.js framework',
+          'Database: MongoDB with Mongoose ODM for data modeling',
+          'Template Engine: EJS (Embedded JavaScript) for dynamic views',
+          'Styling: Custom CSS with Bootstrap 5 for responsive components',
+          'Middleware: Body-parser for request data handling',
+          'Utilities: Lodash for efficient data manipulation',
+          'File Structure: MVC (Model-View-Controller) pattern implementation'
+        ]
+      },
+      {
+        type: 'highlight',
+        title: '💾 Database Design',
+        categories: [
+          {
+            title: 'MongoDB Implementation',
+            items: [
+              'Mongoose schemas for structured data modeling',
+              'Indexing for optimized query performance',
+              'Data validation and middleware hooks',
+              'Relationship management between collections'
+            ]
+          },
+          {
+            title: 'Data Management',
+            items: [
+              'Automatic slug generation for SEO-friendly URLs',
+              'Timestamps for creation and update tracking',
+              'Text search capabilities',
+              'Data aggregation for analytics'
+            ]
+          }
+        ]
+      },
+      {
+        type: 'technical',
+        title: '🏗️ Server-Side Rendering Benefits',
+        content: 'Utilizing EJS templates provides several advantages:',
+        items: [
+          'Faster initial page loads with pre-rendered content',
+          'SEO optimization with complete HTML on page load',
+          'Reduced client-side JavaScript requirements',
+          'Better performance on low-powered devices',
+          'Server-side data processing and formatting',
+          'Consistent rendering across different browsers'
+        ]
+      },
+      {
+        type: 'use-cases',
+        title: '🎯 Application Scenarios',
+        categories: [
+          {
+            title: 'For Bloggers & Writers',
+            items: [
+              'Personal blogging platform with full control',
+              'Portfolio showcase for creative work',
+              'Technical documentation and tutorials',
+              'Content management for small publications'
+            ]
+          },
+          {
+            title: 'For Developers',
+            items: [
+              'Learning traditional server-side rendering',
+              'Understanding MVC architecture patterns',
+              'Database design and optimization practice',
+              'Full-stack application deployment experience'
+            ]
+          },
+          {
+            title: 'For Organizations',
+            items: [
+              'Internal knowledge base and documentation',
+              'Company blog for updates and announcements',
+              'Project documentation and progress tracking',
+              'Community engagement platform'
+            ]
+          }
+        ]
+      },
+      {
+        type: 'technical',
+        title: '⚡ Performance & Security',
+        content: 'Built with attention to both performance and security best practices:',
+        items: [
+          'Input validation and sanitization for security',
+          'Efficient database queries with proper indexing',
+          'Optimized asset delivery with compression',
+          'Error handling and logging systems',
+          'CORS configuration for API security',
+          'Environment-based configuration management'
+        ]
+      },
+      {
+        type: 'impact',
+        content: 'This project demonstrates expertise in traditional full-stack web development, showcasing the ability to build complete, production-ready applications using server-side rendering, proper database design, and clean architecture patterns.'
+      }
+    ],
     link: '/projects/project3',
     video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769723312/Blog-Space-video_nbaong.mp4',
     id: 'project3',
@@ -80,8 +419,125 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Melodify',
-    description:
-      'A comprehensive IoT dashboard for managing smart home devices with automated routines, energy consumption tracking, and predictive maintenance. This system integrates with over 200 IoT devices from various manufacturers, providing a unified interface for lighting, security, climate control, and entertainment systems. Features include voice command integration, geofencing-based automation, energy usage analytics with cost projections, and AI-powered suggestions for optimization. The platform offers remote access, family member permissions, and detailed activity logs with anomaly detection for enhanced security and efficiency.',
+    description: 'A Spotify-inspired music streaming web application built with pure HTML, CSS, and JavaScript, featuring a clean UI and responsive design.',
+    detailedDescription: [
+      {
+        type: 'paragraph',
+        content: 'Melodify is a lightweight, frontend-only music streaming application inspired by Spotify. Built entirely with HTML, CSS, and vanilla JavaScript, it delivers a smooth, responsive music experience without requiring any backend infrastructure.'
+      },
+      {
+        type: 'highlight',
+        title: '🎵 Core Music Features',
+        categories: [
+          {
+            title: 'Music Playback',
+            items: [
+              'Play, pause, and switch between songs seamlessly',
+              'Progress bar with seek functionality',
+              'Volume control with mute/unmute options',
+              'Repeat and shuffle playback modes'
+            ]
+          },
+          {
+            title: 'User Interface',
+            items: [
+              'Clean, modern design inspired by popular music platforms',
+              'Smooth CSS animations and transitions',
+              'Dynamic album art and song information display',
+              'Intuitive navigation and controls'
+            ]
+          },
+          {
+            title: 'Content Management',
+            items: [
+              'Dynamic song and album loading from JSON files',
+              'Organized folder structure for artists and albums',
+              'Easy customization of music library',
+              'Metadata support for artists and songs'
+            ]
+          }
+        ]
+      },
+      {
+        type: 'technical',
+        title: '🛠️ Technical Implementation',
+        content: 'Built with a focus on performance and simplicity using pure frontend technologies:',
+        items: [
+          'HTML5 Audio API for music playback functionality',
+          'CSS3 Flexbox and Grid for responsive layouts',
+          'Vanilla JavaScript (ES6+) for all interactivity',
+          'JSON-based data management for song metadata',
+          'Local file system for music storage (no database needed)',
+          'Modular code structure for maintainability',
+          'Cross-browser compatibility and performance optimization'
+        ]
+      },
+      {
+        type: 'highlight',
+        title: '📱 Responsive Design',
+        categories: [
+          {
+            title: 'Device Optimization',
+            items: [
+              'Fully responsive across mobile, tablet, and desktop',
+              'Touch-friendly controls for mobile devices',
+              'Adaptive layouts based on screen size',
+              'Optimized performance on all platforms'
+            ]
+          },
+          {
+            title: 'Customization System',
+            items: [
+              'Easy addition of new songs and artists',
+              'Structured folder organization for music files',
+              'JSON configuration for artist information',
+              'No build process or compilation required'
+            ]
+          }
+        ]
+      },
+      {
+        type: 'use-cases',
+        title: '💡 Project Structure & Extensibility',
+        categories: [
+          {
+            title: 'How to Add Your Own Music',
+            items: [
+              'Create artist folders in the songs directory',
+              'Add MP3 files and corresponding info.json files',
+              'Update data.json with artist and song information',
+              'All changes reflect immediately without rebuilding'
+            ]
+          },
+          {
+            title: 'Sample Structure',
+            items: [
+              'songs/ArtistName/song.mp3',
+              'songs/ArtistName/info.json (metadata)',
+              'data.json (main catalog file)',
+              'Supports unlimited local song additions'
+            ]
+          }
+        ]
+      },
+      {
+        type: 'technical',
+        title: '⚡ Performance & Optimization',
+        content: 'Designed for optimal performance with minimal dependencies:',
+        items: [
+          'Zero external dependencies or frameworks',
+          'Fast loading with minimal HTTP requests',
+          'Efficient audio streaming and buffering',
+          'Lightweight footprint (~100MB sample limit on GitHub)',
+          'All assets can be hosted on static file servers',
+          'No server-side processing required'
+        ]
+      },
+      {
+        type: 'impact',
+        content: 'This project demonstrates mastery of vanilla JavaScript, modern CSS techniques, and the ability to create fully functional applications without relying on frameworks. It showcases clean code architecture, responsive design principles, and practical solutions for media handling in web applications.'
+      }
+    ],
     link: '/projects/project4',
     video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769723927/Melodify-video_n8aqtv.mp4',
     id: 'project4',
