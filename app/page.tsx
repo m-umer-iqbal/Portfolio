@@ -6,6 +6,7 @@ import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
 import {
   PROJECTS,
   WORK_EXPERIENCE,
@@ -40,9 +41,12 @@ function truncateWords(text: string, wordLimit: number) {
   return words.slice(0, wordLimit).join(' ') + '...'
 }
 
-function ProjectVideo({ src, thumbnail }: { src: string; thumbnail: string }) {
+function ProjectVideo({ src, thumbnail }: { src: string; thumbnail: { light: string; dark: string } }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isHovered, setIsHovered] = useState(false)
+  const { theme } = useTheme()
+
+  const currentThumbnail = theme === 'dark' ? thumbnail.dark : thumbnail.light
 
   const handleMouseEnter = () => {
     setIsHovered(true)
@@ -68,7 +72,7 @@ function ProjectVideo({ src, thumbnail }: { src: string; thumbnail: string }) {
       onMouseLeave={handleMouseLeave}
     >
       <Image
-        src={thumbnail}
+        src={currentThumbnail}
         alt="Project thumbnail"
         fill
         className={`object-cover transition-opacity duration-500 z-20 ${isHovered ? 'opacity-0' : 'opacity-100'}`}

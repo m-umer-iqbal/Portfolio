@@ -19,7 +19,7 @@ import {
 import { createPortal } from 'react-dom'
 import { cn } from '@/lib/utils'
 import { XIcon } from 'lucide-react'
-import useClickOutside from '@/hooks/useClickOutside'
+import useClickOutside from '@/hooks/useClickOutside.js'
 
 export type MorphingDialogContextType = {
   isOpen: boolean
@@ -190,7 +190,7 @@ function MorphingDialogContent({
         setLastFocusableElement(
           focusableElements[focusableElements.length - 1] as HTMLElement,
         )
-        ;(focusableElements[0] as HTMLElement).focus()
+          ; (focusableElements[0] as HTMLElement).focus()
       }
     } else {
       document.body.classList.remove('overflow-hidden')

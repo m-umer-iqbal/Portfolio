@@ -227,13 +227,13 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
             <motion.div variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
                 <button
                     onClick={() => router.back()}
-                    className="group mb-8 flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer"
+                    className="group mb-8 flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer bg-white dark:bg-black"
                 >
-                    <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                    <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 bg-white dark:bg-black" />
                     Back to Home
                 </button>
 
-                <h1 className="text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl">
+                <h1 className="text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl bg-white dark:bg-black">
                     {project.name}
                 </h1>
             </motion.div>
@@ -248,14 +248,12 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
 
             <motion.section
                 variants={VARIANTS_SECTION}
-                transition={TRANSITION_SECTION}
-                className="max-w-5xl"
-            >
+                transition={TRANSITION_SECTION}>
                 <div>
-                    <h2 className="mb-4 text-xl font-medium text-zinc-900 dark:text-zinc-100">
+                    <h2 className="mb-4 text-xl font-medium text-zinc-900 dark:text-zinc-100 bg-white dark:bg-black">
                         About the Project
                     </h2>
-                    <p className="mb-8 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    <p className="mb-8 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black">
                         {project.description}
                     </p>
                 </div>

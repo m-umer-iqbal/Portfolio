@@ -10,12 +10,12 @@ const THEMES_OPTIONS = [
   {
     label: 'Light',
     id: 'light',
-    icon: <SunIcon className="h-4 w-4" />,
+    icon: <SunIcon className="h-4 w-4 cursor-pointer" />,
   },
   {
     label: 'Dark',
     id: 'dark',
-    icon: <MoonIcon className="h-4 w-4" />,
+    icon: <MoonIcon className="h-4 w-4 cursor-pointer" />,
   },
 ]
 

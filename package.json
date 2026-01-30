@@ -9,11 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mdx-js/loader": "^3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.13",
     "@tailwindcss/typography": "^0.5.15",
-    "@types/mdx": "^2.0.13",
     "clsx": "^2.1.1",
     "lucide-react": "^0.468.0",
     "motion": "^11.15.0",
