@@ -18,10 +18,7 @@ type Project = {
   id: string;
   github?: string;
   demo?: string;
-  thumbnail: {
-    light: string;
-    dark: string;
-  };
+  thumbnail: string;
 }
 
 type WorkExperience = {
@@ -157,10 +154,7 @@ export const PROJECTS: Project[] = [
     id: 'project1',
     github: 'https://github.com/m-umer-iqbal/P24-Next-URL-to-url-Converter',
     demo: 'https://example.com',
-    thumbnail: {
-      light: '/project1.jpeg',
-      dark: '/project1.jpeg'
-    },
+    thumbnail: '/project1.jpeg',
   },
   {
     name: 'Barely Social',
@@ -259,10 +253,7 @@ export const PROJECTS: Project[] = [
     id: 'project2',
     github: 'https://github.com/m-umer-iqbal/P23-React-Barely-Social',
     demo: 'https://example.com',
-    thumbnail: {
-      light: '/project2.jpeg',
-      dark: '/project2.jpeg'
-    },
+    thumbnail: '/project2.jpeg',
   },
   {
     name: 'Blog Space',
@@ -412,10 +403,7 @@ export const PROJECTS: Project[] = [
     id: 'project3',
     github: 'https://github.com/m-umer-iqbal/P20-MongoDB-Mongoose-Blog-Space',
     demo: 'https://example.com',
-    thumbnail: {
-      light: '/project3.jpeg',
-      dark: '/project3.jpeg'
-    },
+    thumbnail: '/project3.jpeg',
   },
   {
     name: 'Melodify',
@@ -543,10 +531,7 @@ export const PROJECTS: Project[] = [
     id: 'project4',
     github: 'https://github.com/m-umer-iqbal/P14-Melodify',
     demo: 'https://example.com',
-    thumbnail: {
-      light: '/project4.jpeg',
-      dark: '/project4-dark.jpeg'
-    },
+    thumbnail: '/project4.jpeg',
   },
 ]
 

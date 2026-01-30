@@ -41,12 +41,9 @@ function truncateWords(text: string, wordLimit: number) {
   return words.slice(0, wordLimit).join(' ') + '...'
 }
 
-function ProjectVideo({ src, thumbnail }: { src: string; thumbnail: { light: string; dark: string } }) {
+function ProjectVideo({ src, thumbnail }: { src: string; thumbnail: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isHovered, setIsHovered] = useState(false)
-  const { theme } = useTheme()
-
-  const currentThumbnail = theme === 'dark' ? thumbnail.dark : thumbnail.light
 
   const handleMouseEnter = () => {
     setIsHovered(true)
@@ -69,10 +66,9 @@ function ProjectVideo({ src, thumbnail }: { src: string; thumbnail: { light: str
     <div
       className="relative aspect-video w-full overflow-hidden rounded-xl bg-zinc-200 dark:bg-zinc-800"
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+      onMouseLeave={handleMouseLeave} >
       <Image
-        src={currentThumbnail}
+        src={thumbnail}
         alt="Project thumbnail"
         fill
         className={`object-cover transition-opacity duration-500 z-20 ${isHovered ? 'opacity-0' : 'opacity-100'}`}
@@ -231,7 +227,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}>
         <h3 className="mb-8 text-2xl font-medium bg-white dark:bg-black inline-block px-2">Skills</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 bg-white dark:bg-black">
           {categories.map((category) => (
             <div key={category} className="space-y-4">
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 bg-white dark:bg-black inline-block px-1">

@@ -39,15 +39,12 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet" />
       </head>
-      <body
-        className={`${geist.variable} ${geistMono.variable} tracking-tight antialiased`}
-      >
+      <body className={`${geist.variable} ${geistMono.variable} tracking-tight antialiased`} >
         <ThemeProvider
-          enableSystem={true}
+          enableSystem={false}
           attribute="class"
           storageKey="theme"
-          defaultTheme="system"
-        >
+          defaultTheme="light">
           <InteractiveParticles />
           <div className="fixed inset-0 -z-10 h-full w-full">
             {/* Light mode background gradient */}
