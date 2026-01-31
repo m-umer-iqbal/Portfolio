@@ -55,8 +55,8 @@ export function InteractiveParticles() {
                     baseX: x,
                     baseY: y,
                     size: Math.random() * 2.5 * z, // Increased size for better visibility
-                    vx: (Math.random() - 0.5) * 0.4 * z,
-                    vy: (Math.random() - 0.5) * 0.4 * z,
+                    vx: (Math.random() - 0.5) * 0.8 * z,
+                    vy: (Math.random() - 0.5) * 0.8 * z,
                     density: (Math.random() * 30) + 1,
                     z
                 })
@@ -110,7 +110,7 @@ export function InteractiveParticles() {
 
                     if (dist2 < 100) {
                         ctx.strokeStyle = `${dotColor}${(1 - dist2 / 100) * 0.05 * p.z})`
-                        ctx.lineWidth = 0.5
+                        ctx.lineWidth = 0.5 * ((p.z + p2.z) / 2)
                         ctx.beginPath()
                         ctx.moveTo(p.x, p.y)
                         ctx.lineTo(p2.x, p2.y)

@@ -267,7 +267,7 @@ export default function Personal() {
                 size={64}
               />
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
+                <div className="relative flex w-full flex-row gap-1 justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
                       {job.title}
@@ -276,9 +276,17 @@ export default function Personal() {
                       {job.company}
                     </p>
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400">
-                    {job.start} - {job.end}
-                  </p>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0 mr-1.5 sm:mr-0">
+                    <p className="text-center text-zinc-600 dark:text-zinc-400">
+                      {job.start}
+                    </p>
+                    <p className="text-center text-zinc-600 dark:text-zinc-400">
+                      to
+                    </p>
+                    <p className="text-center text-zinc-600 dark:text-zinc-400">
+                      {job.end}
+                    </p>
+                  </div>
                 </div>
               </div>
             </Link>
@@ -330,7 +338,7 @@ export default function Personal() {
             </div>
 
             <div className="flex flex-col gap-6 w-full md:w-auto items-start md:items-end">
-                <Link
+              <Link
                 href={`mailto:${EMAIL}`}
                 target="_blank"
                 className="group relative flex items-center justify-center gap-2 sm:gap-3 rounded-2xl bg-zinc-900 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 shadow-xl shadow-zinc-900/20 dark:shadow-zinc-100/10 overflow-hidden w-full sm:w-auto">
@@ -338,7 +346,7 @@ export default function Personal() {
                 <Mail className="h-4 sm:h-5 w-4 sm:w-5 relative z-20 shrink-0" />
                 <span className="relative z-20 truncate">{EMAIL}</span>
                 <ArrowRight className="h-3.5 sm:h-4 w-3.5 sm:w-4 relative z-20 transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
-                </Link>
+              </Link>
 
               <div className="flex flex-wrap gap-3">
                 {SOCIAL_LINKS.map((link) => (
