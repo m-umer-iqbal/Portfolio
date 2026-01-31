@@ -217,6 +217,14 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
         notFound()
     }
 
+    const currentIndex = PROJECTS.findIndex((p) => p.id === params.id)
+    const nextIndex = (currentIndex + 1) % PROJECTS.length
+    const nextProject = PROJECTS[nextIndex]
+
+    const handleNext = () => {
+        router.push(`/projects/${nextProject.id}`)
+    }
+
     return (
         <motion.main
             className="space-y-12"
@@ -225,13 +233,23 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
             animate="visible"
         >
             <motion.div variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
-                <button
-                    onClick={() => router.back()}
-                    className="group mb-8 flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer bg-white dark:bg-black"
-                >
-                    <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 bg-white dark:bg-black" />
-                    Back to Home
-                </button>
+                <div className="mb-8 flex items-center justify-between w-full">
+                    <button
+                        onClick={() => router.push('/')}
+                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer bg-white dark:bg-black"
+                    >
+                        <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 bg-white dark:bg-black" />
+                        Back to Home
+                    </button>
+
+                    <button
+                        onClick={handleNext}
+                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer bg-white dark:bg-black"
+                    >
+                        Next Project
+                        <ArrowLeft className="h-4 w-4 transition-transform group-hover:translate-x-1 rotate-180 bg-white dark:bg-black" />
+                    </button>
+                </div>
 
                 <h1 className="inline-block text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl bg-white dark:bg-black">
                     {project.name}
@@ -329,9 +347,13 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
                                                             <h4 className="font-medium text-zinc-800 dark:text-zinc-200 mb-1">
                                                                 {category.title}
                                                             </h4>
-                                                            <p className="text-zinc-600 dark:text-zinc-400">
-                                                                {category.items.join(', ')}
-                                                            </p>
+                                                            <ul className="space-y-2 pl-6">
+                                                                {category.items.map((item, itemIndex) => (
+                                                                    <li key={itemIndex} className="text-zinc-600 dark:text-zinc-400">
+                                                                        • {item}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
                                                         </div>
                                                     ))}
                                                 </div>

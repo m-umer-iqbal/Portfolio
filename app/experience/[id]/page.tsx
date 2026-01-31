@@ -35,6 +35,14 @@ export default function ExperiencePage({ params: paramsPromise }: { params: Prom
         notFound()
     }
 
+    const currentIndex = WORK_EXPERIENCE.findIndex((w) => w.id === params.id)
+    const nextIndex = (currentIndex + 1) % WORK_EXPERIENCE.length
+    const nextJob = WORK_EXPERIENCE[nextIndex]
+
+    const handleNext = () => {
+        router.push(`/experience/${nextJob.id}`)
+    }
+
     return (
         <motion.main
             className="space-y-6 pb-12"
@@ -43,12 +51,21 @@ export default function ExperiencePage({ params: paramsPromise }: { params: Prom
             animate="visible"
         >
             <motion.div variants={VARIANTS_SECTION} transition={TRANSITION_SECTION} className="flex flex-col items-start">
-                <button
-                    onClick={() => router.back()}
-                    className="group mb-4 flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer">
-                    <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                    Back to Home
-                </button>
+                <div className="mb-4 flex items-center justify-between w-full">
+                    <button
+                        onClick={() => router.push('/')}
+                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer">
+                        <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                        Back to Home
+                    </button>
+
+                    <button
+                        onClick={handleNext}
+                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer">
+                        Next Experience
+                        <ArrowLeft className="h-4 w-4 transition-transform group-hover:translate-x-1 rotate-180" />
+                    </button>
+                </div>
 
                 <h1 className="text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl bg-white dark:bg-black inline-block px-2">
                     {job.company}

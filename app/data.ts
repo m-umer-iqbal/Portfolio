@@ -45,13 +45,14 @@ type SocialLink = {
 }
 
 export const PROJECTS: Project[] = [
+  //Project1
   {
     name: 'URL to url Converter',
-    description: 'URL Shortening And Management Application',
+    description: 'URL Shortening And Management Application. . .',
     detailedDescription: [
       {
         type: 'paragraph',
-        content: 'A modern, full-stack URL shortening and management application built with Next.js 15, MongoDB, and NextAuth. Transform long, cumbersome URLs into sleek, memorable links with custom aliases and full analytics.'
+        content: 'A modern, full-stack URL shortening and management application built with Next.js 15, MongoDB, and NextAuth. Transform long, cumbersome URLs into sleek, memorable links with custom aliases.'
       },
       {
         type: 'highlight',
@@ -78,7 +79,6 @@ export const PROJECTS: Project[] = [
             title: 'Security & Authentication',
             items: [
               'Social Authentication: Secure sign-in via Google, GitHub, LinkedIn, and Facebook using NextAuth',
-              'Protected Routes: Role-based access control for user data',
               'Session Management: Secure cookie-based authentication system'
             ]
           }
@@ -95,7 +95,6 @@ export const PROJECTS: Project[] = [
           'Authentication: NextAuth.js with multiple OAuth providers',
           'Image Hosting: Cloudinary for secure avatar uploads and transformations',
           'Animations: Lordicon for premium micro-animations',
-          'Icons: Lucide React / SVG for consistent iconography',
           'Notifications: React-Toastify for user feedback'
         ]
       },
@@ -156,9 +155,10 @@ export const PROJECTS: Project[] = [
     demo: 'https://example.com',
     thumbnail: '/project1.jpeg',
   },
+  //Project2
   {
     name: 'Barely Social',
-    description: 'A full-stack social media platform built with the MERN stack featuring user authentication, post creation, and follow functionality.',
+    description: 'A Minimilist Social Media Platform Web App. . .',
     detailedDescription: [
       {
         type: 'paragraph',
@@ -217,7 +217,7 @@ export const PROJECTS: Project[] = [
           'Authentication: Passport.js for multi-provider OAuth',
           'File Uploads: Cloudinary + Multer for image processing',
           'State Management: React Context API & useState hooks',
-          'Styling: Custom CSS with responsive design principles',
+          'Styling: Tailwind CSS with responsive design principles',
           'Security: Environment variables, session management, and input validation'
         ]
       },
@@ -255,163 +255,150 @@ export const PROJECTS: Project[] = [
     demo: 'https://example.com',
     thumbnail: '/project2.jpeg',
   },
+  //Project3
   {
-    name: 'Blog Space',
-    description: 'A full-featured blogging platform built with Node.js, Express, EJS, and MongoDB, featuring complete CRUD operations and a responsive design.',
+    name: 'Secrets',
+    description: 'An Anonymous Secret Sharing Platform. . .',
     detailedDescription: [
       {
         type: 'paragraph',
-        content: 'Blog Space is a complete blogging application that allows users to create, publish, and manage blog posts with an intuitive interface. Built with traditional server-side rendering using EJS templates, it provides a seamless content management experience with full CRUD functionality.'
+        content: 'Secrets is a production-ready anonymous secret sharing platform built with industry-standard security. The final implementation uses bcrypt password hashing, session-based authentication with Passport.js, and OAuth 2.0 social login (Google & Facebook). This project was developed as a learning exercise, progressively implementing security features from basic to advanced.'
       },
       {
         type: 'highlight',
-        title: '📝 Blog Management Features',
+        title: '🔐 Final Production Implementation',
         categories: [
           {
-            title: 'Content Operations',
+            title: 'Current Security Features',
             items: [
-              'Create new blog posts with rich text content',
-              'Read and view published articles with clean layouts',
-              'Update existing posts with in-place editing functionality',
-              'Delete posts with confirmation for data integrity'
+              'bcrypt password hashing with 10 salt rounds',
+              'Session authentication using Passport.js middleware',
+              'Google OAuth 2.0 login integration',
+              'Facebook OAuth 2.0 login integration',
+              'MongoDB with Mongoose for data persistence',
+              'Protected routes and secure session management'
             ]
           },
           {
-            title: 'User Experience',
+            title: 'What the App Currently Uses',
             items: [
-              'In-place editing without page reloads',
-              'Clean, organized homepage displaying all posts',
-              'SEO-friendly URLs using automatic slug generation',
-              'Responsive design for all device sizes'
-            ]
-          },
-          {
-            title: 'Content Organization',
-            items: [
-              'Categorization and tagging system for posts',
-              'Search functionality for finding content',
-              'Pagination for handling large numbers of posts',
-              'Post status management (draft/published)'
+              'NOT using plain text storage (learning phase only)',
+              'NOT using MD5 hashing (replaced with bcrypt)',
+              'NOT using database-level encryption (replaced with bcrypt)',
+              'Using bcrypt + Passport.js + OAuth in production version'
             ]
           }
         ]
       },
       {
         type: 'technical',
-        title: '🔧 Full-Stack Architecture',
-        content: 'Built with a traditional but powerful tech stack focusing on server-side rendering:',
+        title: '🚀 Core Features',
+        content: 'The platform provides a complete anonymous sharing experience with modern security:',
         items: [
-          'Backend: Node.js runtime with Express.js framework',
-          'Database: MongoDB with Mongoose ODM for data modeling',
-          'Template Engine: EJS (Embedded JavaScript) for dynamic views',
-          'Styling: Custom CSS with Bootstrap 5 for responsive components',
-          'Middleware: Body-parser for request data handling',
-          'Utilities: Lodash for efficient data manipulation',
-          'File Structure: MVC (Model-View-Controller) pattern implementation'
+          'User registration with securely hashed passwords (bcrypt)',
+          'Login with email/password or social accounts',
+          'Anonymous secret posting and viewing',
+          'Session management with Passport.js',
+          'Responsive Bootstrap 5 interface',
+          'Social login with Google and Facebook accounts'
+        ]
+      },
+      {
+        type: 'technical',
+        title: '🛠️ Production Tech Stack',
+        content: 'Final implementation uses these technologies:',
+        items: [
+          'Backend: Node.js + Express.js',
+          'Authentication: Passport.js (Local, Google OAuth, Facebook)',
+          'Password Security: bcrypt with 10 salt rounds',
+          'Database: MongoDB + Mongoose ODM',
+          'Templating: EJS for server-side rendering',
+          'Frontend: Bootstrap 5 + Custom CSS'
         ]
       },
       {
         type: 'highlight',
-        title: '💾 Database Design',
+        title: '📚 Learning Journey (Not in Production)',
         categories: [
           {
-            title: 'MongoDB Implementation',
+            title: 'Progressive Implementation Steps',
             items: [
-              'Mongoose schemas for structured data modeling',
-              'Indexing for optimized query performance',
-              'Data validation and middleware hooks',
-              'Relationship management between collections'
+              'Step 1: Basic app with plain text storage (replaced)',
+              'Step 2: Database encryption with mongoose-encryption (replaced)',
+              'Step 3: MD5 hashing (replaced with bcrypt)',
+              'Step 4: bcrypt hashing with salt (current implementation)',
+              'Step 5: Passport.js session auth (current implementation)',
+              'Step 6: OAuth social login (current implementation)'
             ]
           },
           {
-            title: 'Data Management',
+            title: 'Learning Purpose',
             items: [
-              'Automatic slug generation for SEO-friendly URLs',
-              'Timestamps for creation and update tracking',
-              'Text search capabilities',
-              'Data aggregation for analytics'
+              'Understanding security vulnerabilities',
+              'Learning evolution of authentication methods',
+              'Comparing different security approaches',
+              'Building up to industry standards'
             ]
           }
         ]
       },
       {
         type: 'technical',
-        title: '🏗️ Server-Side Rendering Benefits',
-        content: 'Utilizing EJS templates provides several advantages:',
+        title: '⚡ Current Security Features',
+        content: 'The live application implements these security measures:',
         items: [
-          'Faster initial page loads with pre-rendered content',
-          'SEO optimization with complete HTML on page load',
-          'Reduced client-side JavaScript requirements',
-          'Better performance on low-powered devices',
-          'Server-side data processing and formatting',
-          'Consistent rendering across different browsers'
+          'bcrypt password hashing (not reversible)',
+          'Secure session cookies with express-session',
+          'Passport.js middleware for authentication flow',
+          'OAuth 2.0 for third-party authentication',
+          'Environment variables for API keys and secrets',
+          'Input validation and sanitization'
         ]
       },
       {
         type: 'use-cases',
-        title: '🎯 Application Scenarios',
+        title: '💡 Application Uses',
         categories: [
           {
-            title: 'For Bloggers & Writers',
+            title: 'For Users',
             items: [
-              'Personal blogging platform with full control',
-              'Portfolio showcase for creative work',
-              'Technical documentation and tutorials',
-              'Content management for small publications'
+              'Anonymous secret sharing platform',
+              'Secure account creation and login',
+              'Social login convenience',
+              'Confidential message sharing'
             ]
           },
           {
             title: 'For Developers',
             items: [
-              'Learning traditional server-side rendering',
-              'Understanding MVC architecture patterns',
-              'Database design and optimization practice',
-              'Full-stack application deployment experience'
-            ]
-          },
-          {
-            title: 'For Organizations',
-            items: [
-              'Internal knowledge base and documentation',
-              'Company blog for updates and announcements',
-              'Project documentation and progress tracking',
-              'Community engagement platform'
+              'Example of production-ready authentication',
+              'Reference for bcrypt + Passport.js implementation',
+              'OAuth 2.0 integration example',
+              'Secure session management pattern'
             ]
           }
         ]
       },
       {
-        type: 'technical',
-        title: '⚡ Performance & Security',
-        content: 'Built with attention to both performance and security best practices:',
-        items: [
-          'Input validation and sanitization for security',
-          'Efficient database queries with proper indexing',
-          'Optimized asset delivery with compression',
-          'Error handling and logging systems',
-          'CORS configuration for API security',
-          'Environment-based configuration management'
-        ]
-      },
-      {
         type: 'impact',
-        content: 'This project demonstrates expertise in traditional full-stack web development, showcasing the ability to build complete, production-ready applications using server-side rendering, proper database design, and clean architecture patterns.'
+        content: 'This project demonstrates professional-grade authentication implementation using bcrypt, Passport.js, and OAuth 2.0. While built through progressive learning steps, the final application uses industry-standard security practices suitable for production deployment.'
       }
     ],
     link: '/projects/project3',
-    video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769723312/Blog-Space-video_nbaong.mp4',
+    video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769815244/Secrets-video_xl2tbp.mp4',
     id: 'project3',
-    github: 'https://github.com/m-umer-iqbal/P20-MongoDB-Mongoose-Blog-Space',
+    github: 'https://github.com/m-umer-iqbal/P21-Authentication-and-Security-Secrets',
     demo: 'https://example.com',
     thumbnail: '/project3.jpeg',
   },
+  //Project4
   {
     name: 'Melodify',
-    description: 'A Spotify-inspired music streaming web application built with pure HTML, CSS, and JavaScript, featuring a clean UI and responsive design.',
+    description: 'A Music Streaming Web App. . .',
     detailedDescription: [
       {
         type: 'paragraph',
-        content: 'Melodify is a lightweight, frontend-only music streaming application inspired by Spotify. Built entirely with HTML, CSS, and vanilla JavaScript, it delivers a smooth, responsive music experience without requiring any backend infrastructure.'
+        content: 'Melodify is a lightweight, frontend-only music streaming application. Built entirely with HTML, CSS, and vanilla JavaScript, it delivers a smooth, responsive music experience without requiring any backend infrastructure.'
       },
       {
         type: 'highlight',
@@ -516,7 +503,6 @@ export const PROJECTS: Project[] = [
           'Zero external dependencies or frameworks',
           'Fast loading with minimal HTTP requests',
           'Efficient audio streaming and buffering',
-          'Lightweight footprint (~100MB sample limit on GitHub)',
           'All assets can be hosted on static file servers',
           'No server-side processing required'
         ]
