@@ -244,8 +244,7 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
 
                     <button
                         onClick={handleNext}
-                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer bg-white dark:bg-black"
-                    >
+                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer bg-white dark:bg-black" >
                         Next Project
                         <ArrowLeft className="h-4 w-4 transition-transform group-hover:translate-x-1 rotate-180 bg-white dark:bg-black" />
                     </button>

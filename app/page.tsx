@@ -171,24 +171,27 @@ export default function Personal() {
       >
         <h3 className="mb-5 text-2xl font-medium bg-white dark:bg-black inline-block px-2">About</h3>
         <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-          <div className="flex-1 space-y-4 text-center md:text-left">
-            <p className="text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black px-1">
-              I am a Full-stack Developer specializing in building scalable, high-performance web applications using the MERN stack and Next.js. My work focuses on creating seamless, end-to-end digital solutions that are intuitive, performant, and technically robust.
+          <div className="flex-1 space-y-4 md:text-left bg-white dark:bg-black">
+            <p className="text-zinc-600 dark:text-zinc-400 px-1">
+              <span className="italic inline-block mb-1">Hi, I'm Umer Iqbal,</span> <br /> A <strong>final-year Computer Science student at Pak-AIMS</strong>, passionate about crafting exceptional web experiences. I learned web development the traditional way through dedication, problem-solving, and building 20+ projects from scratch.
             </p>
-            <p className="text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black px-1">
-              With a deep understanding of modern frontend frameworks, server-side logic, and database management, I bridge the gap between user-centric design and complex technical architecture. I enjoy transforming ideas into production-ready applications by combining clean code, efficient workflows, and a focus on developer experience.
+            <p className="text-zinc-600 dark:text-zinc-400 px-1">
+              After exploring software development and network engineering, I realized <strong>web development was my true calling</strong>. I've spent the last three years mastering the craft and building SaaS solutions that deliver real value.
             </p>
-            <p className="text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black px-1">
-              Whether it’s building dynamic SaaS platforms, complex dashboards, or responsive e-commerce sites, I aim to deliver solutions that are visually engaging, SEO-friendly, and highly scalable across the modern web.
+            <p className="text-zinc-600 dark:text-zinc-400 px-1">
+              <strong>My development philosophy centers on minimal, user-friendly design with clean aesthetics and lightning-fast experiences.</strong> I believe great software isn't just about features, it's about how seamlessly those features enhance user productivity. One of my proudest achievements was building a <Link href={"https://www.linkedin.com/posts/umer-iqbal-313a262b2_webdevelopment-frontenddevelopment-javascript-activity-7324003954202193920-PbDi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEtCJD8BRBsOk8kjSCdY_uCT2X1OCw4S11E"} target="_blank" className="italic font-semibold text-blue-500">CGPA/GPA Calculator</Link> for my university website.
+            </p>
+            <p className="text-zinc-600 dark:text-zinc-400 px-1">
+              Currently seeking opportunities to gain 1-2 years of professional experience before combining full-time work with freelancing. <strong>I'm open to remote opportunities worldwide and available for on-site roles in Lahore, Pakistan. </strong> <br /> <span className="italic inline-block mt-1">Let's build something amazing together!</span>
             </p>
           </div>
           <div className="shrink-0 bg-zinc-100 dark:bg-zinc-900 rounded-3xl p-1 shadow-2xl ring-1 ring-zinc-200/50 dark:ring-zinc-800/50">
             <Image
               src="/profile-picture.png"
               alt="Profile-Picture"
-              width={325}
-              height={325}
-              className="rounded-2xl object-cover h-80 w-80 mb-0"
+              width={410}
+              height={410}
+              className="rounded-2xl object-cover mb-0"
               priority
             />
           </div>
@@ -327,15 +330,15 @@ export default function Personal() {
             </div>
 
             <div className="flex flex-col gap-6 w-full md:w-auto items-start md:items-end">
-              <Link
+                <Link
                 href={`mailto:${EMAIL}`}
                 target="_blank"
-                className="group relative flex items-center justify-center gap-3 rounded-2xl bg-zinc-900 px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 shadow-xl shadow-zinc-900/20 dark:shadow-zinc-100/10 overflow-hidden">
+                className="group relative flex items-center justify-center gap-2 sm:gap-3 rounded-2xl bg-zinc-900 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 shadow-xl shadow-zinc-900/20 dark:shadow-zinc-100/10 overflow-hidden w-full sm:w-auto">
                 <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 dark:via-black/10 to-transparent z-10" />
-                <Mail className="h-5 w-5 relative z-20" />
-                <span className="relative z-20">{EMAIL}</span>
-                <ArrowRight className="h-4 w-4 relative z-20 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
+                <Mail className="h-4 sm:h-5 w-4 sm:w-5 relative z-20 shrink-0" />
+                <span className="relative z-20 truncate">{EMAIL}</span>
+                <ArrowRight className="h-3.5 sm:h-4 w-3.5 sm:w-4 relative z-20 transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
+                </Link>
 
               <div className="flex flex-wrap gap-3">
                 {SOCIAL_LINKS.map((link) => (
