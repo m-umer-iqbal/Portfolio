@@ -152,7 +152,7 @@ export const PROJECTS: Project[] = [
     video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1/URL-to-url-converter-video_ws2pex.mp4',
     id: 'project1',
     github: 'https://github.com/m-umer-iqbal/P24-Next-URL-to-url-Converter',
-    demo: 'https://example.com',
+    demo: '',
     thumbnail: '/project1.jpeg',
   },
   //Project2
@@ -252,7 +252,7 @@ export const PROJECTS: Project[] = [
     video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769720764/Barely-Social-video_ykqzwm.mp4',
     id: 'project2',
     github: 'https://github.com/m-umer-iqbal/P23-React-Barely-Social',
-    demo: 'https://example.com',
+    demo: '',
     thumbnail: '/project2.jpeg',
   },
   //Project3
@@ -388,7 +388,7 @@ export const PROJECTS: Project[] = [
     video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769815244/Secrets-video_xl2tbp.mp4',
     id: 'project3',
     github: 'https://github.com/m-umer-iqbal/P21-Authentication-and-Security-Secrets',
-    demo: 'https://example.com',
+    demo: '',
     thumbnail: '/project3.jpeg',
   },
   //Project4
@@ -516,7 +516,7 @@ export const PROJECTS: Project[] = [
     video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1769723927/Melodify-video_n8aqtv.mp4',
     id: 'project4',
     github: 'https://github.com/m-umer-iqbal/P14-Melodify',
-    demo: 'https://example.com',
+    demo: '',
     thumbnail: '/project4.jpeg',
   },
 ]
