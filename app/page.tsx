@@ -184,6 +184,19 @@ export default function Personal() {
             <p className="text-zinc-600 dark:text-zinc-400 px-1">
               Currently seeking opportunities to gain 1-2 years of professional experience before combining full-time work with freelancing. <strong>I'm open to remote opportunities worldwide and available for on-site roles in Lahore, Pakistan. </strong> <br /> <span className="italic inline-block mt-1">Let's build something amazing together!</span>
             </p>
+            <div className="mt-6">
+              <Link
+                href="/resume.pdf"
+                download="Umer_Iqbal_Resume.pdf"
+                className="group relative inline-flex items-center gap-2 rounded-xl bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 shadow-lg shadow-zinc-900/20 dark:shadow-zinc-100/10 overflow-hidden"
+              >
+                <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 dark:via-black/10 to-transparent z-10" />
+                <svg className="h-4 w-4 relative z-20 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span className="relative z-20">Download Resume</span>
+              </Link>
+            </div>
           </div>
           <div className="shrink-0 bg-zinc-100 dark:bg-zinc-900 rounded-3xl p-1 shadow-2xl ring-1 ring-zinc-200/50 dark:ring-zinc-800/50">
             <Image
