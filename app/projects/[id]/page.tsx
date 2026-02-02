@@ -227,7 +227,7 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
 
     return (
         <motion.main
-            className="space-y-12"
+            className="space-y-12 bg-white dark:bg-black"
             variants={VARIANTS_CONTAINER}
             initial="hidden"
             animate="visible"
@@ -236,17 +236,17 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
                 <div className="mb-8 flex items-center justify-between w-full">
                     <button
                         onClick={() => router.push('/')}
-                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer bg-white dark:bg-black"
+                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer"
                     >
-                        <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 bg-white dark:bg-black" />
+                        <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
                         Back to Home
                     </button>
 
                     <button
                         onClick={handleNext}
-                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer bg-white dark:bg-black" >
+                        className="group flex items-center gap-2 text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 cursor-pointer" >
                         Next Project
-                        <ArrowLeft className="h-4 w-4 transition-transform group-hover:translate-x-1 rotate-180 bg-white dark:bg-black" />
+                        <ArrowLeft className="h-4 w-4 transition-transform group-hover:translate-x-1 rotate-180" />
                     </button>
                 </div>
 
@@ -270,11 +270,11 @@ export default function ProjectPage({ params: paramsPromise }: { params: Promise
                 {project.detailedDescription && project.detailedDescription.length > 0 ? (
                     // Structured layout for projects with detailedDescription
                     <div className="space-y-8">
-                        <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 inline-block bg-white dark:bg-black">
+                        <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 inline-block">
                             About the Project
                         </h2>
 
-                        <div className="space-y-8 text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black">
+                        <div className="space-y-8 text-zinc-600 dark:text-zinc-400">
                             {project.detailedDescription.map((section, index) => {
                                 switch (section.type) {
                                     case 'paragraph':

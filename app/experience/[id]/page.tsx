@@ -45,11 +45,10 @@ export default function ExperiencePage({ params: paramsPromise }: { params: Prom
 
     return (
         <motion.main
-            className="space-y-6 pb-12"
+            className="space-y-6 pb-12 bg-white dark:bg-black"
             variants={VARIANTS_CONTAINER}
             initial="hidden"
-            animate="visible"
-        >
+            animate="visible">
             <motion.div variants={VARIANTS_SECTION} transition={TRANSITION_SECTION} className="flex flex-col items-start">
                 <div className="mb-4 flex items-center justify-between w-full">
                     <button
@@ -67,13 +66,13 @@ export default function ExperiencePage({ params: paramsPromise }: { params: Prom
                     </button>
                 </div>
 
-                <h1 className="text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl bg-white dark:bg-black inline-block px-2">
+                <h1 className="text-4xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl inline-block px-2">
                     {job.company}
                 </h1>
-                <h2 className="mt-2 text-2xl font-light tracking-tight text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black inline-block px-2">
+                <h2 className="mt-2 text-2xl font-light tracking-tight text-zinc-600 dark:text-zinc-400 inline-block px-2">
                     {job.title}
                 </h2>
-                <p className="mt-2 text-zinc-500 dark:text-zinc-400 bg-white dark:bg-black inline-block px-2">
+                <p className="mt-2 text-zinc-500 dark:text-zinc-400  inline-block px-2">
                     {job.start} - {job.end}
                 </p>
             </motion.div>
@@ -84,7 +83,7 @@ export default function ExperiencePage({ params: paramsPromise }: { params: Prom
                 className="max-w-5xl"
             >
                 <div>
-                    <h3 className="mb-3 text-xl font-medium text-zinc-900 dark:text-zinc-100 bg-white dark:bg-black inline-block px-2">
+                    <h3 className="mb-3 text-xl font-medium text-zinc-900 dark:text-zinc-100 inline-block px-2">
                         Role & Responsibilities
                     </h3>
                     <ul className="space-y-2">

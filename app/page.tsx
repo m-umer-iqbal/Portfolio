@@ -168,10 +168,11 @@ export default function Personal() {
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
+        className="bg-white dark:bg-black"
       >
-        <h3 className="mb-5 text-2xl font-medium bg-white dark:bg-black inline-block px-2">About</h3>
+        <h3 className="mb-5 text-2xl font-medium inline-block px-2">About</h3>
         <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-          <div className="flex-1 space-y-4 md:text-left bg-white dark:bg-black">
+          <div className="flex-1 space-y-4 md:text-left">
             <p className="text-zinc-600 dark:text-zinc-400 px-1">
               <span className="italic inline-block mb-1">Hi, I'm Umer Iqbal,</span> <br /> A <strong>final-year Computer Science student at Pak-AIMS</strong>, passionate about crafting exceptional web experiences. I learned web development the traditional way through dedication, problem-solving, and building 20+ projects from scratch.
             </p>
@@ -213,8 +214,9 @@ export default function Personal() {
 
       <motion.section
         variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}>
-        <h3 className="mb-5 text-2xl font-medium bg-white dark:bg-black inline-block px-2">Projects</h3>
+        transition={TRANSITION_SECTION}
+        className="bg-white dark:bg-black">
+        <h3 className="mb-5 text-2xl font-medium inline-block px-2">Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <Link
@@ -230,7 +232,7 @@ export default function Personal() {
                   {project.name}
                   <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
                 </div>
-                <p className="text-base text-zinc-600 dark:text-zinc-400 bg-white dark:bg-black px-1">
+                <p className="text-base text-zinc-600 dark:text-zinc-400 px-1">
                   {truncateWords(project.description, 10)}
                 </p>
               </div>
@@ -241,9 +243,10 @@ export default function Personal() {
 
       <motion.section
         variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}>
-        <h3 className="mb-8 text-2xl font-medium bg-white dark:bg-black inline-block px-2">Skills</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 bg-white dark:bg-black">
+        transition={TRANSITION_SECTION}
+        className="bg-white dark:bg-black">
+        <h3 className="mb-8 text-2xl font-medium inline-block px-2">Skills</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 ">
           {categories.map((category) => (
             <div key={category} className="space-y-4">
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 bg-white dark:bg-black inline-block px-1">
@@ -266,7 +269,8 @@ export default function Personal() {
 
       <motion.section
         variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}>
+        transition={TRANSITION_SECTION}
+        className="bg-white dark:bg-black">
         <h3 className="mb-5 text-2xl font-medium">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
@@ -310,8 +314,8 @@ export default function Personal() {
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
-        className="pb-0">
-        <h3 className="mb-8 text-2xl font-medium bg-white dark:bg-black inline-block px-2">Contact</h3>
+        className="pb-0 bg-white dark:bg-black">
+        <h3 className="mb-8 text-2xl font-medium inline-block px-2">Contact</h3>
 
         <div className="relative overflow-hidden rounded-3xl bg-zinc-200/80 dark:bg-zinc-800/80 p-8 md:p-12 ring-1 ring-zinc-300/50 dark:ring-zinc-700/50 backdrop-blur-md transition-all duration-500 hover:ring-zinc-400/50 dark:hover:ring-zinc-600/50 hover:shadow-2xl hover:shadow-zinc-500/20 dark:hover:shadow-zinc-100/10">
 
