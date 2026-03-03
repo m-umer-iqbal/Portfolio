@@ -44,7 +44,7 @@ export default function RootLayout({
           enableSystem={false}
           attribute="class"
           storageKey="theme"
-          defaultTheme="light">
+          defaultTheme="dark">
           <InteractiveParticles />
           <div className="fixed inset-0 -z-10 h-full w-full">
             {/* Light mode background gradient */}
