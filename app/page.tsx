@@ -297,7 +297,7 @@ export default function Personal() {
                     <p className="text-center text-zinc-600 dark:text-zinc-400">
                       {job.start}
                     </p>
-                    <p className="text-center text-zinc-600 dark:text-zinc-400">
+                    <p className="text-center text-zinc-600 dark:text-zinc-400 mr-1 ml-1">
                       to
                     </p>
                     <p className="text-center text-zinc-600 dark:text-zinc-400">
