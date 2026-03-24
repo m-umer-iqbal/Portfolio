@@ -577,7 +577,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/umer-iqbal-313a262b2',
+    link: 'https://www.linkedin.com/in/umeriqbal1',
   },
 ]
 
