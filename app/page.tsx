@@ -174,16 +174,18 @@ export default function Personal() {
         <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
           <div className="flex-1 space-y-4 md:text-left">
             <p className="text-zinc-600 dark:text-zinc-400 px-1">
-              <span className="italic inline-block mb-1">Hi, I'm Umer Iqbal,</span> <br /> A <strong>final-year Computer Science student at Pak-AIMS</strong>, passionate about crafting exceptional web experiences. I learned web development the traditional way through dedication, problem-solving, and building 20+ projects from scratch.
+              <span className="italic inline-block mb-1">Hi, I'm Umer Iqbal,</span> <br /> A <strong>final-year Computer Science student at Pak-AIMS</strong>, passionate about web development.
             </p>
             <p className="text-zinc-600 dark:text-zinc-400 px-1">
-              After exploring software development and network engineering, I realized <strong>web development was my true calling</strong>. I've spent the last three years mastering the craft and building SaaS solutions that deliver real value.
+              I’ve built 4+ production ready projects using modern technologies including React, Next.js, Node.js, and MongoDB, focusing on clean design, performance, and real-world problem solving. One of my key projects is a <Link href={"https://www.linkedin.com/posts/umer-iqbal-313a262b2_webdevelopment-frontenddevelopment-javascript-activity-7324003954202193920-PbDi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEtCJD8BRBsOk8kjSCdY_uCT2X1OCw4S11E"} target="_blank" className="italic font-semibold text-blue-500">CGPA/GPA Calculator</Link> developed for my university.
             </p>
+
             <p className="text-zinc-600 dark:text-zinc-400 px-1">
-              <strong>My development philosophy centers on minimal, user-friendly design with clean aesthetics and lightning-fast experiences.</strong> I believe great software isn't just about features, it's about how seamlessly those features enhance user productivity. One of my proudest achievements was building a <Link href={"https://www.linkedin.com/posts/umer-iqbal-313a262b2_webdevelopment-frontenddevelopment-javascript-activity-7324003954202193920-PbDi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEtCJD8BRBsOk8kjSCdY_uCT2X1OCw4S11E"} target="_blank" className="italic font-semibold text-blue-500">CGPA/GPA Calculator</Link> for my university website.
+              I believe in building fast, user-friendly, and impactful applications that enhance user experience and productivity.
             </p>
+
             <p className="text-zinc-600 dark:text-zinc-400 px-1">
-              Currently seeking opportunities to gain 1-2 years of professional experience before combining full-time work with freelancing. <strong>I'm open to remote opportunities worldwide and available for on-site roles in Lahore, Pakistan. </strong> <br /> <span className="italic inline-block mt-1">Let's build something amazing together!</span>
+              Currently seeking Web Development Internship or Junior Developer roles. Open to remote opportunities and on-site roles in Lahore, Pakistan. <br /> <span className="italic inline-block mt-1">Let's build something amazing together!</span>
             </p>
             <div className="mt-6">
               <Link
@@ -203,8 +205,8 @@ export default function Personal() {
             <Image
               src="/profile-picture.png"
               alt="Profile-Picture"
-              width={410}
-              height={410}
+              width={360}
+              height={360}
               className="rounded-2xl object-cover mb-0"
               priority
             />

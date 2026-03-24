@@ -48,38 +48,39 @@ export const PROJECTS: Project[] = [
   //Project1
   {
     name: 'URL to url Converter',
-    description: 'URL Shortening And Management Application. . .',
+    description: 'URL Shortening and Management Application . . .',
     detailedDescription: [
       {
         type: 'paragraph',
-        content: 'A modern, full-stack URL shortening and management application built with Next.js 15, MongoDB, and NextAuth. Transform long, cumbersome URLs into sleek, memorable links with custom aliases.'
+        content:
+          'A full-stack URL shortening application built with Next.js and MongoDB that converts long URLs into clean, customizable links with a user-friendly dashboard.'
       },
       {
         type: 'highlight',
-        title: '✨ Features',
+        title: '✨ Key Features',
         categories: [
           {
-            title: 'Core Functionality',
+            title: 'Core Features',
             items: [
-              'Custom Short URLs: Choose your own "preferred word" aliases for meaningful links',
-              'Personal Dashboard: Manage all your converted links in one place',
-              'Real-time Editing: Update your original URLs or aliases on the fly',
-              'Copy-to-Clipboard: One-click sharing functionality'
+              'Custom short URLs with user-defined aliases',
+              'Dashboard to manage and edit links',
+              'Real-time updates for URLs and aliases',
+              'One-click copy-to-clipboard functionality'
             ]
           },
           {
             title: 'User Experience',
             items: [
-              'Responsive Design: Beautifully crafted with Tailwind CSS for seamless use on any device',
-              'Interactive UI: Uses Lordicons for smooth, premium micro-animations',
-              'Profile Management: Customize your public profile with name, username, and Cloudinary-powered avatar uploads'
+              'Responsive design using Tailwind CSS',
+              'Interactive UI with smooth animations',
+              'Profile management with avatar upload (Cloudinary)'
             ]
           },
           {
-            title: 'Security & Authentication',
+            title: 'Authentication',
             items: [
-              'Social Authentication: Secure sign-in via Google, GitHub, LinkedIn, and Facebook using NextAuth',
-              'Session Management: Secure cookie-based authentication system'
+              'OAuth login (Google, GitHub, LinkedIn, Facebook)',
+              'Secure session-based authentication'
             ]
           }
         ]
@@ -87,65 +88,31 @@ export const PROJECTS: Project[] = [
       {
         type: 'technical',
         title: '🚀 Tech Stack',
-        content: 'Built with modern web technologies for optimal performance and scalability:',
+        content: 'Built with modern technologies for performance and scalability:',
         items: [
-          'Framework: Next.js 15 (App Router) with React 19',
-          'Styling: Tailwind CSS for utility-first responsive design',
-          'Database: MongoDB with Mongoose ODM for data modeling',
-          'Authentication: NextAuth.js with multiple OAuth providers',
-          'Image Hosting: Cloudinary for secure avatar uploads and transformations',
-          'Animations: Lordicon for premium micro-animations',
-          'Notifications: React-Toastify for user feedback'
+          'Next.js (App Router), React',
+          'Tailwind CSS',
+          'MongoDB, Mongoose',
+          'NextAuth.js (OAuth)',
+          'Cloudinary',
+          'React-Toastify'
         ]
       },
       {
         type: 'technical',
-        title: '🏗️ Architecture',
-        content: 'Clean project structure following Next.js best practices:',
+        title: '🏗️ Highlights',
+        content: 'Key implementation details:',
         items: [
-          'App Router: Next.js 15 App Router for modern routing and layouts',
-          'API Routes: Backend API endpoints for URL management and user operations',
-          'Dynamic Routing: [preferWord]/ for URL redirection logic',
-          'Layouts: Consistent layout structure across all pages',
-          'Components: Reusable UI components (Header, Footer, etc.)',
-          'Context: React Context API for global state management',
-          'Models: Mongoose schemas for database structure',
-          'Lib: Helper functions and utilities'
-        ]
-      },
-      {
-        type: 'use-cases',
-        title: '🎯 Target Users',
-        categories: [
-          {
-            title: 'For Businesses & Marketers',
-            items: [
-              'Create branded short links for marketing campaigns',
-              'Track link performance and user engagement',
-              'Share clean, professional URLs on social media'
-            ]
-          },
-          {
-            title: 'For Developers & Teams',
-            items: [
-              'Simplify API documentation links',
-              'Share development resources and tools',
-              'Create memorable URLs for project deployments'
-            ]
-          },
-          {
-            title: 'For Everyday Users',
-            items: [
-              'Shorten long article and video links',
-              'Create personal bookmark collections',
-              'Share files and resources with easy-to-remember URLs'
-            ]
-          }
+          'Scalable API routes for URL management',
+          'Dynamic routing for URL redirection',
+          'Reusable component-based architecture',
+          'Clean and maintainable code structure'
         ]
       },
       {
         type: 'impact',
-        content: 'This project demonstrates expertise in modern full-stack development with Next.js, showcasing production-ready features like authentication, database integration, and responsive design while solving real-world problems of URL management.'
+        content:
+          'Demonstrates full-stack development skills including authentication, database integration, API design, and building scalable, user-friendly applications.'
       }
     ],
     link: '/projects/project1',
@@ -158,94 +125,80 @@ export const PROJECTS: Project[] = [
   //Project2
   {
     name: 'Barely Social',
-    description: 'A Minimilist Social Media Platform Web App. . .',
+    description: 'A Minimilist Social Media Web App . . .',
     detailedDescription: [
       {
         type: 'paragraph',
-        content: 'Barely Social is a full-stack social media web application built with the MERN stack (MongoDB, Express, React, Node.js). This platform allows users to connect, share content, and interact with each other through posts, likes, and following systems.'
+        content:
+          'A full-stack social media web application built with the MERN stack, enabling users to create posts, connect with others, and interact through likes and follow systems.'
       },
       {
         type: 'highlight',
         title: '🚀 Key Features',
         categories: [
           {
-            title: 'User Authentication & Security',
+            title: 'Authentication',
             items: [
-              'Email-based registration and login system',
-              'Social login via Google, Facebook, and GitHub using Passport.js',
-              'Session-based authentication with secure cookies',
+              'Email-based authentication with secure sessions',
+              'OAuth login (Google, Facebook, GitHub) using Passport.js',
               'Protected routes and API endpoints'
             ]
           },
           {
-            title: 'Social Media Functionality',
+            title: 'Core Functionality',
             items: [
-              'Create, edit, and delete posts with text content',
-              'Upload images to posts using Cloudinary integration',
-              'Like/dislike posts anonymously',
-              'Real-time post updates and interactions'
+              'Create, edit, and delete posts',
+              'Image uploads using Cloudinary',
+              'Like/dislike system with real-time interactions'
             ]
           },
           {
-            title: 'User Connectivity',
+            title: 'User System',
             items: [
-              'Follow/unfollow other users',
-              'Dual feed system: "Following" feed and "Strangers" feed',
-              'Profile viewing with user bio and activity',
-              'Personalized content based on connections'
+              'Follow/unfollow users',
+              'Personalized feeds (Following & Discover)',
+              'User profiles with activity and bio'
             ]
           },
           {
             title: 'Profile Management',
             items: [
-              'Update personal information (name, bio, email)',
-              'Upload and change profile pictures',
-              'View personal post history and activity',
-              'Track followers and following count'
+              'Update user info and profile picture',
+              'View post history and engagement',
+              'Track followers and following'
             ]
           }
         ]
       },
       {
         type: 'technical',
-        title: '🔧 Technical Implementation',
-        content: 'This project demonstrates comprehensive full-stack development with modern technologies:',
+        title: '🔧 Tech Stack',
+        content: 'Built with modern full-stack technologies:',
         items: [
-          'Frontend: React.js with functional components and hooks',
-          'Backend: Node.js & Express.js RESTful API architecture',
-          'Database: MongoDB with Mongoose ODM for data modeling',
-          'Authentication: Passport.js for multi-provider OAuth',
-          'File Uploads: Cloudinary + Multer for image processing',
-          'State Management: React Context API & useState hooks',
-          'Styling: Tailwind CSS with responsive design principles',
-          'Security: Environment variables, session management, and input validation'
+          'React.js (Hooks, Context API)',
+          'Node.js, Express.js (REST APIs)',
+          'MongoDB, Mongoose',
+          'Passport.js (OAuth Authentication)',
+          'Cloudinary, Multer (Image Uploads)',
+          'Tailwind CSS'
         ]
       },
       {
-        type: 'use-cases',
-        title: '🎯 Learning Outcomes',
-        categories: [
-          {
-            title: 'Full-Stack Development',
-            items: ['Built complete CRUD operations for posts and users', 'Implemented RESTful API endpoints', 'Connected frontend and backend seamlessly']
-          },
-          {
-            title: 'Authentication Systems',
-            items: ['Implemented session-based authentication', 'Integrated multiple OAuth providers', 'Managed user sessions and security']
-          },
-          {
-            title: 'Database Design',
-            items: ['Designed MongoDB schemas for users and posts', 'Implemented relationships between collections', 'Optimized queries for performance']
-          },
-          {
-            title: 'File Handling',
-            items: ['Processed image uploads client and server-side', 'Integrated Cloudinary for cloud storage', 'Optimized images for web delivery']
-          }
+        type: 'technical',
+        title: '🏗️ Highlights',
+        content: 'Key implementation details:',
+        items: [
+          'Designed scalable RESTful APIs',
+          'Implemented secure session-based authentication',
+          'Built CRUD operations for users and posts',
+          'Optimized database queries and schema design',
+          'Integrated cloud-based image handling'
         ]
       },
       {
         type: 'impact',
-        content: 'This project showcases my ability to build complex, full-stack applications with real-world features, emphasizing clean architecture, security best practices, and user-centric design principles.'
+        content:
+          'Demonstrates strong full-stack development skills, including API design, authentication, database management, and building scalable, user-centric applications.'
       }
     ],
     link: '/projects/project2',
@@ -258,130 +211,66 @@ export const PROJECTS: Project[] = [
   //Project3
   {
     name: 'Secrets',
-    description: 'An Anonymous Secret Sharing Platform. . .',
+    description: 'An Anonymous Secrets Sharing Platform . . .',
     detailedDescription: [
       {
         type: 'paragraph',
-        content: 'Secrets is a production-ready anonymous secret sharing platform built with industry-standard security. The final implementation uses bcrypt password hashing, session-based authentication with Passport.js, and OAuth 2.0 social login (Google & Facebook). This project was developed as a learning exercise, progressively implementing security features from basic to advanced.'
+        content:
+          'A full-stack web application that allows users to anonymously share secrets, built with modern authentication and industry-standard security practices.'
       },
       {
         type: 'highlight',
-        title: '🔐 Final Production Implementation',
+        title: '🔐 Key Features',
         categories: [
           {
-            title: 'Current Security Features',
+            title: 'Authentication & Security',
             items: [
-              'bcrypt password hashing with 10 salt rounds',
-              'Session authentication using Passport.js middleware',
-              'Google OAuth 2.0 login integration',
-              'Facebook OAuth 2.0 login integration',
-              'MongoDB with Mongoose for data persistence',
-              'Protected routes and secure session management'
+              'Password hashing using bcrypt',
+              'Session-based authentication with Passport.js',
+              'OAuth login (Google, Facebook)',
+              'Protected routes and secure session handling'
             ]
           },
           {
-            title: 'What the App Currently Uses',
+            title: 'Core Functionality',
             items: [
-              'NOT using plain text storage (learning phase only)',
-              'NOT using MD5 hashing (replaced with bcrypt)',
-              'NOT using database-level encryption (replaced with bcrypt)',
-              'Using bcrypt + Passport.js + OAuth in production version'
+              'Anonymous secret posting and viewing',
+              'User registration and login system',
+              'Responsive UI with Bootstrap',
+              'Input validation and secure data handling'
             ]
           }
         ]
       },
       {
         type: 'technical',
-        title: '🚀 Core Features',
-        content: 'The platform provides a complete anonymous sharing experience with modern security:',
+        title: '🛠️ Tech Stack',
+        content: 'Built with modern backend and authentication technologies:',
         items: [
-          'User registration with securely hashed passwords (bcrypt)',
-          'Login with email/password or social accounts',
-          'Anonymous secret posting and viewing',
-          'Session management with Passport.js',
-          'Responsive Bootstrap 5 interface',
-          'Social login with Google and Facebook accounts'
+          'Node.js, Express.js',
+          'MongoDB, Mongoose',
+          'Passport.js (Local + OAuth)',
+          'bcrypt (Password Hashing)',
+          'EJS (Server-side rendering)',
+          'Bootstrap 5'
         ]
       },
       {
         type: 'technical',
-        title: '🛠️ Production Tech Stack',
-        content: 'Final implementation uses these technologies:',
+        title: '🏗️ Highlights',
+        content: 'Key implementation details:',
         items: [
-          'Backend: Node.js + Express.js',
-          'Authentication: Passport.js (Local, Google OAuth, Facebook)',
-          'Password Security: bcrypt with 10 salt rounds',
-          'Database: MongoDB + Mongoose ODM',
-          'Templating: EJS for server-side rendering',
-          'Frontend: Bootstrap 5 + Custom CSS'
-        ]
-      },
-      {
-        type: 'highlight',
-        title: '📚 Learning Journey (Not in Production)',
-        categories: [
-          {
-            title: 'Progressive Implementation Steps',
-            items: [
-              'Step 1: Basic app with plain text storage (replaced)',
-              'Step 2: Database encryption with mongoose-encryption (replaced)',
-              'Step 3: MD5 hashing (replaced with bcrypt)',
-              'Step 4: bcrypt hashing with salt (current implementation)',
-              'Step 5: Passport.js session auth (current implementation)',
-              'Step 6: OAuth social login (current implementation)'
-            ]
-          },
-          {
-            title: 'Learning Purpose',
-            items: [
-              'Understanding security vulnerabilities',
-              'Learning evolution of authentication methods',
-              'Comparing different security approaches',
-              'Building up to industry standards'
-            ]
-          }
-        ]
-      },
-      {
-        type: 'technical',
-        title: '⚡ Current Security Features',
-        content: 'The live application implements these security measures:',
-        items: [
-          'bcrypt password hashing (not reversible)',
-          'Secure session cookies with express-session',
-          'Passport.js middleware for authentication flow',
-          'OAuth 2.0 for third-party authentication',
-          'Environment variables for API keys and secrets',
-          'Input validation and sanitization'
-        ]
-      },
-      {
-        type: 'use-cases',
-        title: '💡 Application Uses',
-        categories: [
-          {
-            title: 'For Users',
-            items: [
-              'Anonymous secret sharing platform',
-              'Secure account creation and login',
-              'Social login convenience',
-              'Confidential message sharing'
-            ]
-          },
-          {
-            title: 'For Developers',
-            items: [
-              'Example of production-ready authentication',
-              'Reference for bcrypt + Passport.js implementation',
-              'OAuth 2.0 integration example',
-              'Secure session management pattern'
-            ]
-          }
+          'Implemented secure authentication with bcrypt and Passport.js',
+          'Integrated OAuth 2.0 for social login',
+          'Built session management with secure cookies',
+          'Designed MongoDB schemas for user data',
+          'Applied security best practices for authentication systems'
         ]
       },
       {
         type: 'impact',
-        content: 'This project demonstrates professional-grade authentication implementation using bcrypt, Passport.js, and OAuth 2.0. While built through progressive learning steps, the final application uses industry-standard security practices suitable for production deployment.'
+        content:
+          'Demonstrates strong understanding of authentication systems, security best practices, and full-stack development with real-world implementation of OAuth and session management.'
       }
     ],
     link: '/projects/project3',
@@ -394,122 +283,73 @@ export const PROJECTS: Project[] = [
   //Project4
   {
     name: 'Melodify',
-    description: 'A Music Streaming Web App. . .',
+    description: 'A Music Streaming Web App . . .',
     detailedDescription: [
       {
         type: 'paragraph',
-        content: 'Melodify is a lightweight, frontend-only music streaming application. Built entirely with HTML, CSS, and vanilla JavaScript, it delivers a smooth, responsive music experience without requiring any backend infrastructure.'
+        content:
+          'A lightweight frontend music streaming application built with HTML, CSS, and vanilla JavaScript, delivering a smooth and responsive music playback experience without backend dependencies.'
       },
       {
         type: 'highlight',
-        title: '🎵 Core Music Features',
+        title: '🎵 Key Features',
         categories: [
           {
-            title: 'Music Playback',
+            title: 'Music Player',
             items: [
-              'Play, pause, and switch between songs seamlessly',
+              'Play, pause, and switch between songs',
               'Progress bar with seek functionality',
-              'Volume control with mute/unmute options',
-              'Repeat and shuffle playback modes'
+              'Volume control with mute/unmute',
+              'Shuffle and repeat modes'
             ]
           },
           {
             title: 'User Interface',
             items: [
-              'Clean, modern design inspired by popular music platforms',
-              'Smooth CSS animations and transitions',
-              'Dynamic album art and song information display',
-              'Intuitive navigation and controls'
+              'Responsive design for all devices',
+              'Dynamic song and album display',
+              'Smooth animations and transitions',
+              'Clean and intuitive UI'
             ]
           },
           {
             title: 'Content Management',
             items: [
-              'Dynamic song and album loading from JSON files',
-              'Organized folder structure for artists and albums',
-              'Easy customization of music library',
-              'Metadata support for artists and songs'
+              'Dynamic loading of songs via JSON',
+              'Organized file structure for music library',
+              'Easy addition of songs and metadata',
+              'No backend or database required'
             ]
           }
         ]
       },
       {
         type: 'technical',
-        title: '🛠️ Technical Implementation',
-        content: 'Built with a focus on performance and simplicity using pure frontend technologies:',
+        title: '🛠️ Tech Stack',
+        content: 'Built using core frontend technologies:',
         items: [
-          'HTML5 Audio API for music playback functionality',
-          'CSS3 Flexbox and Grid for responsive layouts',
-          'Vanilla JavaScript (ES6+) for all interactivity',
-          'JSON-based data management for song metadata',
-          'Local file system for music storage (no database needed)',
-          'Modular code structure for maintainability',
-          'Cross-browser compatibility and performance optimization'
-        ]
-      },
-      {
-        type: 'highlight',
-        title: '📱 Responsive Design',
-        categories: [
-          {
-            title: 'Device Optimization',
-            items: [
-              'Fully responsive across mobile, tablet, and desktop',
-              'Touch-friendly controls for mobile devices',
-              'Adaptive layouts based on screen size',
-              'Optimized performance on all platforms'
-            ]
-          },
-          {
-            title: 'Customization System',
-            items: [
-              'Easy addition of new songs and artists',
-              'Structured folder organization for music files',
-              'JSON configuration for artist information',
-              'No build process or compilation required'
-            ]
-          }
-        ]
-      },
-      {
-        type: 'use-cases',
-        title: '💡 Project Structure & Extensibility',
-        categories: [
-          {
-            title: 'How to Add Your Own Music',
-            items: [
-              'Create artist folders in the songs directory',
-              'Add MP3 files and corresponding info.json files',
-              'Update data.json with artist and song information',
-              'All changes reflect immediately without rebuilding'
-            ]
-          },
-          {
-            title: 'Sample Structure',
-            items: [
-              'songs/ArtistName/song.mp3',
-              'songs/ArtistName/info.json (metadata)',
-              'data.json (main catalog file)',
-              'Supports unlimited local song additions'
-            ]
-          }
+          'HTML5 Audio API',
+          'CSS3 (Flexbox, Grid)',
+          'JavaScript (ES6+)',
+          'JSON (Data Management)'
         ]
       },
       {
         type: 'technical',
-        title: '⚡ Performance & Optimization',
-        content: 'Designed for optimal performance with minimal dependencies:',
+        title: '🏗️ Highlights',
+        content: 'Key implementation details:',
         items: [
-          'Zero external dependencies or frameworks',
-          'Fast loading with minimal HTTP requests',
-          'Efficient audio streaming and buffering',
-          'All assets can be hosted on static file servers',
-          'No server-side processing required'
+          'Built a complete music player without frameworks',
+          'Implemented dynamic DOM manipulation',
+          'Designed responsive layouts for all screen sizes',
+          'Optimized performance with zero external dependencies',
+          'Maintained clean and modular code structure'
         ]
       },
       {
         type: 'impact',
-        content: 'This project demonstrates mastery of vanilla JavaScript, modern CSS techniques, and the ability to create fully functional applications without relying on frameworks. It showcases clean code architecture, responsive design principles, and practical solutions for media handling in web applications.'
+        content:
+          'Demonstrates strong fundamentals in JavaScript, DOM manipulation, responsive design, and the ability to build complete applications without relying on frameworks.'
       }
     ],
     link: '/projects/project4',
@@ -518,7 +358,7 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/m-umer-iqbal/P14-Melodify',
     demo: '',
     thumbnail: '/project4.jpeg',
-  },
+  }
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
