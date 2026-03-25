@@ -189,8 +189,8 @@ export default function Personal() {
             </p>
             <div className="mt-6">
               <Link
-                href="/resume.pdf"
-                download="Umer_Iqbal_Resume.pdf"
+                href="/Umer-Iqbal-CV.pdf"
+                download="Umer-Iqbal-CV.pdf"
                 className="group relative inline-flex items-center gap-2 rounded-xl bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 shadow-lg shadow-zinc-900/20 dark:shadow-zinc-100/10 overflow-hidden"
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 dark:via-black/10 to-transparent z-10" />
