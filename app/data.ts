@@ -408,6 +408,7 @@ export const SKILLS: Skill[] = [
   { name: 'GitHub', category: 'Tools', icon: 'devicon-github-original' },
   { name: 'Postman', category: 'Tools', icon: 'devicon-postman-plain', color: '#ff6c37' },
   { name: 'MongoDB Compass', category: 'Tools', icon: 'fas fa-compass', color: '#47a248' },
+  { name: 'Vercel', category: 'Tools', icon: 'devicon-vercel-original'},
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
