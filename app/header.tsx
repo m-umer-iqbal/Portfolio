@@ -8,7 +8,7 @@ const roles = {
   "backend": "Backend Web Developer",
   "fullstack": "Full-Stack Web Developer",
   "mern": "MERN Stack Web Developer",
-  "webd": "Web Developer"
+  "web": "Web Developer"
 } as const;
 
 export function Header() {
