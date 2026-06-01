@@ -5,6 +5,7 @@ import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
 import { InteractiveParticles } from '@/components/ui/interactive-particles'
+import { Suspense } from 'react';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -54,7 +55,9 @@ export default function RootLayout({
           </div>
           <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-geist)]">
             <div className="relative mx-auto w-full max-w-6xl flex-1 flex flex-col px-4 pt-20">
-              <Header />
+              <Suspense fallback={<div className="" />}>
+                <Header />
+              </Suspense>
               <div className="flex-1 w-full">
                 {children}
               </div>
