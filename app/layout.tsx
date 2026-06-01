@@ -61,7 +61,9 @@ export default function RootLayout({
               <div className="flex-1 w-full">
                 {children}
               </div>
-              <Footer />
+              <Suspense fallback={<div className="" />}>
+                <Footer />
+              </Suspense>
             </div>
           </div>
         </ThemeProvider>

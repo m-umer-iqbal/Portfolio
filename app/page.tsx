@@ -17,6 +17,9 @@ type RoleContent = {
   label: string
   tagline: string
   bio: string[]
+  skillCategories: string[]
+  skillsLayout: 'columns' | 'rows'
+  excludeSkills?: string[]
 }
 
 const ROLES: Record<string, RoleContent> = {
@@ -28,6 +31,9 @@ const ROLES: Record<string, RoleContent> = {
       "I've built 4+ production-ready projects using React, Next.js, Tailwind CSS, and modern animation libraries — always prioritising clean UI, smooth interactions, and great performance.",
       'Currently open to frontend internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
     ],
+    skillCategories: ['Frontend', 'Tools'],
+    skillsLayout: 'rows',
+    excludeSkills: ['MongoDB Compass'],
   },
   backend: {
     label: 'Backend Web Developer',
@@ -37,6 +43,8 @@ const ROLES: Record<string, RoleContent> = {
       "I've shipped 4+ production-ready projects using Node.js, Express.js, MongoDB, and Mongoose — with a focus on clean architecture, secure authentication, and efficient database design.",
       'Currently open to backend internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
     ],
+    skillCategories: ['Backend', 'Database', 'Tools'],
+    skillsLayout: 'rows',
   },
   fullstack: {
     label: 'Full-Stack Web Developer',
@@ -46,6 +54,8 @@ const ROLES: Record<string, RoleContent> = {
       "I've shipped 4+ production-ready projects using React, Next.js, Node.js, Express.js, and MongoDB — focusing on clean design, solid performance, and real-world problem solving.",
       'Currently open to full-stack internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
     ],
+    skillCategories: ['Frontend', 'Backend', 'Database', 'Full-Stack', 'Tools'],
+    skillsLayout: 'columns',
   },
   mern: {
     label: 'MERN Stack Web Developer',
@@ -55,6 +65,8 @@ const ROLES: Record<string, RoleContent> = {
       "I've shipped 4+ production-ready projects using MongoDB, Express.js, React, and Node.js — with hands-on experience in REST APIs, OAuth, cloud storage, and responsive UI.",
       'Currently open to MERN stack internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
     ],
+    skillCategories: ['Frontend', 'Backend', 'Database', 'Tools'],
+    skillsLayout: 'rows',
   },
   web: {
     label: 'Web Developer',
@@ -64,6 +76,8 @@ const ROLES: Record<string, RoleContent> = {
       "I've shipped 4+ production-ready projects using React, Next.js, Node.js, and MongoDB — working across the full stack to deliver fast, user-friendly applications.",
       'Currently open to internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
     ],
+    skillCategories: ['Frontend', 'Backend', 'Database', 'Full-Stack', 'Tools'],
+    skillsLayout: 'columns',
   },
 }
 
@@ -172,10 +186,19 @@ function SkillBadge({ name, icon, color }: { name: string; icon?: string; color?
 }
 
 export default function Personal() {
-  const categories = Array.from(new Set(SKILLS.map((s) => s.category)))
   const query = useSearchParams()
   const roleKey = query.get('role') ?? 'web'
   const role = ROLES[roleKey] ?? ROLES.web
+
+  const visibleCategories = Array.from(
+    new Set(SKILLS.map((s) => s.category))
+  ).filter((cat) => role.skillCategories.includes(cat))
+
+  const visibleSkills = SKILLS.filter(
+    (s) =>
+      role.skillCategories.includes(s.category) &&
+      !role.excludeSkills?.includes(s.name)
+  )
 
   return (
     <motion.main
@@ -293,25 +316,74 @@ export default function Personal() {
         className="bg-white dark:bg-black"
       >
         <h3 className="mb-8 text-2xl font-medium inline-block px-2">Skills</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
-          {categories.map((category) => (
-            <div key={category} className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 bg-white dark:bg-black inline-block px-1">
-                {category}
-              </h4>
-              <div className="flex flex-col gap-2">
-                {SKILLS.filter((s) => s.category === category).map((skill) => (
-                  <SkillBadge
-                    key={skill.name}
-                    name={skill.name}
-                    icon={skill.icon}
-                    color={skill.color}
-                  />
-                ))}
+
+        {role.skillsLayout === 'columns' ? (
+          /* ── Columns layout (fullstack / web) ── */
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+            {visibleCategories.map((category) => (
+              <div key={category} className="space-y-4">
+                <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 inline-block px-1">
+                  {category}
+                </h4>
+                <div className="flex flex-col gap-2">
+                  {visibleSkills
+                    .filter((s) => s.category === category)
+                    .map((skill) => (
+                      <SkillBadge
+                        key={skill.name}
+                        name={skill.name}
+                        icon={skill.icon}
+                        color={skill.color}
+                      />
+                    ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          /* ── Rows layout (frontend / backend / mern) ── */
+          <div className="flex flex-col divide-y divide-zinc-100 dark:divide-zinc-900">
+            {visibleCategories.map((category) => (
+              <div key={category} className="flex flex-col sm:flex-row sm:items-start gap-4 py-6 first:pt-0 last:pb-0">
+                {/* Category label */}
+                <div className="sm:w-28 shrink-0 pt-1">
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500">
+                    {category}
+                  </span>
+                </div>
+                {/* Skills */}
+                <div className="flex flex-wrap gap-2">
+                  {visibleSkills
+                    .filter((s) => s.category === category)
+                    .map((skill) => (
+                      <motion.div
+                        key={skill.name}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        whileHover={{ y: -2 }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                        className="group flex items-center gap-2 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 ring-1 ring-zinc-200/60 dark:ring-zinc-800/60 px-3 py-2 cursor-default transition-shadow duration-200 hover:shadow-md hover:shadow-zinc-200/60 dark:hover:shadow-zinc-900/60"
+                      >
+                        <span
+                          className="text-xl leading-none transition-all duration-300 group-hover:scale-110"
+                          style={{
+                            color: skill.color || 'currentColor',
+                            filter: `drop-shadow(0 0 6px ${skill.color ? skill.color + '55' : 'transparent'})`,
+                          }}
+                        >
+                          <i className={skill.icon} />
+                        </span>
+                        <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors duration-200">
+                          {skill.name}
+                        </span>
+                      </motion.div>
+                    ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </motion.section>
 
       {/* ── Contact ── */}

@@ -5,6 +5,7 @@ import { TextLoop } from '@/components/ui/text-loop'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { useSearchParams } from "next/navigation"
 
 const THEMES_OPTIONS = [
   {
@@ -61,18 +62,40 @@ function ThemeSwitch() {
     </AnimatedBackground>
   )
 }
+
 function getYear() {
   return new Date().getFullYear()
 }
 
+const roles = {
+  "frontend": "Frontend Web Developer",
+  "backend": "Backend Web Developer",
+  "fullstack": "Full-Stack Web Developer",
+  "mern": "MERN Stack Web Developer",
+  "web": "Web Developer"
+} as const;
+
 export function Footer() {
+  const query = useSearchParams();
+  const role: string = query.get("role") || "web";
+  let value: string = "Web Developer";
+
+  let existedRole: keyof typeof roles;
+
+  for (existedRole in roles) {
+    if (existedRole === role) {
+      value = roles[existedRole]
+      break;
+    }
+  }
+
   return (
     <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
       <div className="flex items-center justify-between">
         <Link href="/" target="_blank">
           <TextLoop className="text-xs text-zinc-500 bg-white dark:bg-black px-1">
-            <span>© {getYear()} Umer Iqbal.</span>
-            <span>Full-Stack Web Developer.</span>
+            <span>© {getYear()} Umer Iqbal</span>
+            <span>{value}</span>
           </TextLoop>
         </Link>
         <div className="text-xs text-zinc-400">
