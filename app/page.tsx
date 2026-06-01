@@ -13,13 +13,59 @@ import {
 } from './data'
 import { Mail, ArrowRight } from 'lucide-react'
 
-const ROLES = {
-  frontend: 'Frontend Web Developer',
-  backend: 'Backend Web Developer',
-  fullstack: 'Full-Stack Web Developer',
-  mern: 'MERN Stack Web Developer',
-  web: 'Web Developer',
-} as const
+type RoleContent = {
+  label: string
+  tagline: string
+  bio: string[]
+}
+
+const ROLES: Record<string, RoleContent> = {
+  frontend: {
+    label: 'Frontend Web Developer',
+    tagline: 'a Frontend Web Developer',
+    bio: [
+      'Final-year Computer Science student at Pak-AIMS with a strong focus on crafting polished, responsive user interfaces. I turn designs into fast, accessible, and pixel-perfect web experiences.',
+      "I've built 4+ production-ready projects using React, Next.js, Tailwind CSS, and modern animation libraries — always prioritising clean UI, smooth interactions, and great performance.",
+      'Currently open to frontend internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
+    ],
+  },
+  backend: {
+    label: 'Backend Web Developer',
+    tagline: 'a Backend Web Developer',
+    bio: [
+      'Final-year Computer Science student at Pak-AIMS with a solid foundation in server-side development. I build reliable, scalable APIs and data-driven systems that power great products.',
+      "I've shipped 4+ production-ready projects using Node.js, Express.js, MongoDB, and Mongoose — with a focus on clean architecture, secure authentication, and efficient database design.",
+      'Currently open to backend internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
+    ],
+  },
+  fullstack: {
+    label: 'Full-Stack Web Developer',
+    tagline: 'a Full-Stack Web Developer',
+    bio: [
+      'Final-year Computer Science student at Pak-AIMS, comfortable across the entire stack. I design and build complete web applications — from database schema to polished UI.',
+      "I've shipped 4+ production-ready projects using React, Next.js, Node.js, Express.js, and MongoDB — focusing on clean design, solid performance, and real-world problem solving.",
+      'Currently open to full-stack internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
+    ],
+  },
+  mern: {
+    label: 'MERN Stack Web Developer',
+    tagline: 'a MERN Stack Web Developer',
+    bio: [
+      'Final-year Computer Science student at Pak-AIMS, specialising in the MERN stack. I build end-to-end JavaScript applications with a consistent, unified codebase from frontend to backend.',
+      "I've shipped 4+ production-ready projects using MongoDB, Express.js, React, and Node.js — with hands-on experience in REST APIs, OAuth, cloud storage, and responsive UI.",
+      'Currently open to MERN stack internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
+    ],
+  },
+  web: {
+    label: 'Web Developer',
+    tagline: 'a Web Developer',
+    bio: [
+      'Final-year Computer Science student at Pak-AIMS, passionate about building things for the web. I focus on clean design, solid performance, and solving real problems.',
+      "I've shipped 4+ production-ready projects using React, Next.js, Node.js, and MongoDB — working across the full stack to deliver fast, user-friendly applications.",
+      'Currently open to internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
+    ],
+  },
+}
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -129,8 +175,7 @@ export default function Personal() {
   const categories = Array.from(new Set(SKILLS.map((s) => s.category)))
   const query = useSearchParams()
   const roleKey = query.get('role') ?? 'web'
-  const roleLabel =
-    (ROLES as Record<string, string>)[roleKey] ?? ROLES.web
+  const role = ROLES[roleKey] ?? ROLES.web
 
   return (
     <motion.main
@@ -154,36 +199,17 @@ export default function Personal() {
             <span className="bg-gradient-to-r from-zinc-500 to-black bg-clip-text text-transparent dark:from-zinc-400 dark:to-white">
               Umer Iqbal
             </span>{' '}
-            &mdash; {roleLabel}.
+            &mdash; {role.tagline}.
           </p>
         </div>
 
         {/* Bio paragraphs */}
         <div className="space-y-4 px-2 mb-8">
-          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Final-year Computer Science student at{' '}
-            <strong className="text-zinc-800 dark:text-zinc-200">Pak-AIMS</strong>, passionate
-            about building things for the web. I focus on clean design, solid performance, and
-            solving real problems.
-          </p>
-          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            I&apos;ve shipped 4+ production-ready projects using React, Next.js, Node.js, and
-            MongoDB &mdash; including a{' '}
-            <Link
-              href="https://www.linkedin.com/posts/umer-iqbal-313a262b2_webdevelopment-frontenddevelopment-javascript-activity-7324003954202193920-PbDi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEtCJD8BRBsOk8kjSCdY_uCT2X1OCw4S11E"
-              target="_blank"
-              className="font-medium text-zinc-900 dark:text-zinc-100 underline underline-offset-4 decoration-zinc-400 dark:decoration-zinc-600 hover:decoration-zinc-900 dark:hover:decoration-zinc-100 transition-colors duration-200"
-            >
-              CGPA/GPA Calculator
-            </Link>{' '}
-            built for my university.
-          </p>
-          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Currently open to{' '}
-            <strong className="text-zinc-800 dark:text-zinc-200">internship</strong> and{' '}
-            <strong className="text-zinc-800 dark:text-zinc-200">junior developer</strong> roles
-            &mdash; remote or on-site in Lahore, Pakistan.
-          </p>
+          {role.bio.map((paragraph, i) => (
+            <p key={i} className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
         </div>
 
         {/* Stats row */}
