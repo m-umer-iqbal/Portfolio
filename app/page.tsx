@@ -65,8 +65,8 @@ const ROLES: Record<string, RoleContent> = {
       "I've shipped 4+ production-ready projects using MongoDB, Express.js, React, and Node.js — with hands-on experience in REST APIs, OAuth, cloud storage, and responsive UI.",
       'Currently open to MERN stack internship and junior developer roles — remote or on-site in Lahore, Pakistan.',
     ],
-    skillCategories: ['Frontend', 'Backend', 'Database', 'Tools'],
-    skillsLayout: 'rows',
+    skillCategories: ['Frontend', 'Backend', 'Database', 'Full-Stack', 'Tools'],
+    skillsLayout: 'columns',
   },
   web: {
     label: 'Web Developer',
@@ -178,7 +178,7 @@ function SkillBadge({ name, icon, color }: { name: string; icon?: string; color?
       >
         <i className={icon} />
       </div>
-      <span className="text-base font-medium text-zinc-600 dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-300 bg-white dark:bg-black px-1">
+      <span className="text-base font-medium text-zinc-600 dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-300 dark:bg-black px-1">
         {name}
       </span>
     </motion.div>
