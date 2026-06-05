@@ -252,7 +252,7 @@ export default function Personal() {
           ))}
         </div>
 
-        {/* Resume button */}
+        {/* Resume button
         <div className="px-2">
           <Link
             href="/Umer-Iqbal-CV.pdf"
@@ -275,7 +275,7 @@ export default function Personal() {
             </svg>
             <span className="relative z-20">Download Resume</span>
           </Link>
-        </div>
+        </div> */}
       </motion.section>
 
       {/* ── Projects ── */}

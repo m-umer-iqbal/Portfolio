@@ -5,7 +5,6 @@ import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
 import { InteractiveParticles } from '@/components/ui/interactive-particles'
-import { CustomCursor } from '@/components/ui/custom-cursor'
 import { Suspense } from 'react';
 
 export const viewport: Viewport = {
@@ -48,7 +47,6 @@ export default function RootLayout({
           storageKey="theme"
           defaultTheme="dark">
           <InteractiveParticles />
-          <CustomCursor />
           <div className="fixed inset-0 -z-10 h-full w-full">
             {/* Light mode background gradient */}
             <div className="absolute inset-0 h-full w-full bg-white dark:hidden opacity-50"></div>

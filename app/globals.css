@@ -23,24 +23,6 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-
-  /* Hide native cursor — custom cursor takes over on non-touch devices */
-  @media (pointer: fine) {
-
-    *,
-    *::before,
-    *::after {
-      cursor: none !important;
-    }
-
-    /* Text zoom on cursor hover — applied via JS */
-    .cursor-text-zoom {
-      display: inline-block;
-      transform: scale(1.06);
-      transform-origin: left center;
-      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-  }
 }
 
 :root {
