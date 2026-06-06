@@ -432,6 +432,145 @@ export const PROJECTS: Project[] = [
       ],
     },
   },
+  {
+    name: 'NERD',
+    description: 'A Chromium-Based Browser Extension for Frontend Developers . . .',
+    link: '/projects/project5',
+    video: 'https://res.cloudinary.com/dkh7dg6fi/video/upload/v1780788819/Fyp-running-video_cawh05.mp4',
+    id: 'project5',
+    github: 'https://github.com/m-umer-iqbal/FYP-NERD',
+    demo: '',
+    thumbnail: '/project5.jpeg',
+    descriptions: {
+      default: [
+        {
+          type: 'paragraph',
+          content:
+            'A Chromium-based browser extension built to streamline frontend development workflows. Developed as a Final Year Project by a team of three, this extension helps developers save time by automating form filling, analyzing websites for performance and accessibility issues, and simplifying debugging.',
+        },
+        {
+          type: 'highlight',
+          icon: 'rocket',
+          title: 'Key Features',
+          categories: [
+            {
+              title: 'Local Form Saver',
+              items: [
+                'Automatic detection of login, register, sign-in, and sign-up pages',
+                'Save form data once and autofill with a single click',
+                'Collections containing multiple forms and fields',
+                'CRUD operations for collections, forms, and fields',
+                'Protected form metadata to maintain integrity',
+              ],
+            },
+            {
+              title: 'Website Analyzer',
+              items: [
+                'Detects oversized images and slow-loading scripts',
+                'Identifies missing alt text and accessibility issues',
+                'Checks heading hierarchy and color contrast',
+                'Detects inline styles and inline event handlers',
+                'Provides issue descriptions, CSS selectors, code fixes, and impact levels',
+              ],
+            },
+            {
+              title: 'Debugging Assistant',
+              items: [
+                'Captures TypeError, ReferenceError, and uncaught promise errors',
+                'Explains errors in plain language',
+                'Displays file names and line numbers',
+                'Suggests code fixes to speed up debugging',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'technical',
+          icon: 'stack',
+          title: 'Tech Stack',
+          content: 'Built with modern web technologies:',
+          items: [
+            'React.js',
+            'JavaScript',
+            'Tailwind CSS',
+            'Chrome Extension APIs',
+            'DOM APIs',
+            'Local Storage API',
+          ],
+        },
+        {
+          type: 'technical',
+          icon: 'building',
+          title: 'Highlights',
+          content: 'Key implementation details:',
+          items: [
+            'Team Lead of a 3-member Final Year Project team',
+            'Designed modular extension architecture',
+            'Implemented intelligent page detection and form management',
+            'Built a rule-based website analyzer for performance, accessibility, and SEO',
+            'Created a debugging assistant with human-readable error explanations',
+            'Focused on improving developer productivity and user experience',
+          ],
+        },
+        {
+          type: 'impact',
+          content:
+            'Demonstrates software engineering, browser extension development, TypeScript, DOM manipulation, problem-solving, and leadership skills by building practical tools that address real-world frontend development challenges.',
+        },
+      ],
+
+      frontend: [
+        {
+          type: 'paragraph',
+          content:
+            'A developer-focused browser extension with a clean and intuitive interface, designed to enhance frontend productivity through automated form handling, website analysis, and simplified debugging.',
+        },
+        {
+          type: 'highlight',
+          icon: 'sparkles',
+          title: 'UI & Frontend Highlights',
+          categories: [
+            {
+              title: 'Developer Experience',
+              items: [
+                'Simple popup interface',
+                'Context-aware buttons and actions',
+                'Human-readable error explanations',
+                'Detailed issue reports with suggested fixes',
+              ],
+            },
+            {
+              title: 'Productivity',
+              items: [
+                'One-click form autofill',
+                'Automatic page detection',
+                'Structured issue categorization',
+                'Improved debugging workflow',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'technical',
+          icon: 'stack',
+          title: 'Frontend Stack',
+          items: [
+            'TypeScript',
+            'JavaScript',
+            'HTML5',
+            'CSS3',
+            'DOM APIs',
+            'Chrome Extension APIs',
+          ],
+        },
+        {
+          type: 'impact',
+          content:
+            'Demonstrates strong frontend skills through DOM manipulation, browser extension development, and designing user-centric developer tools.',
+        },
+      ],
+    },
+  }
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
