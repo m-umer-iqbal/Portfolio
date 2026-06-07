@@ -200,6 +200,10 @@ export default function Personal() {
       !role.excludeSkills?.includes(s.name)
   )
 
+  const visibleProjects = PROJECTS.filter((p) =>
+    p.visibleIn.includes(roleKey as 'frontend' | 'backend' | 'fullstack' | 'mern' | 'web' | 'default')
+  )
+
   return (
     <motion.main
       className="space-y-24"
@@ -286,7 +290,7 @@ export default function Personal() {
       >
         <h3 className="mb-5 text-2xl font-medium inline-block px-2">Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
+          {visibleProjects.map((project) => (
             <Link
               key={project.name}
               href={project.link}

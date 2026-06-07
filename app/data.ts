@@ -33,6 +33,8 @@ export type Project = {
   github?: string
   demo?: string
   thumbnail: string
+  // roles that should display this project ('default' = all roles not explicitly listed)
+  visibleIn: Array<'default' | 'frontend' | 'backend' | 'fullstack' | 'mern' | 'web'>
 }
 
 type WorkExperience = {
@@ -69,6 +71,7 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/m-umer-iqbal/P24-Next-URL-to-url-Converter',
     demo: '',
     thumbnail: '/project1.jpeg',
+    visibleIn: ['default', 'mern', 'fullstack', 'web', 'backend', 'frontend'],
     descriptions: {
       default: [
         {
@@ -168,6 +171,7 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/m-umer-iqbal/P23-React-Barely-Social',
     demo: '',
     thumbnail: '/project2.jpeg',
+    visibleIn: ['default', 'mern', 'fullstack', 'web', 'backend', 'frontend'],
     descriptions: {
       default: [
         {
@@ -291,6 +295,7 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/m-umer-iqbal/P21-Authentication-and-Security-Secrets',
     demo: '',
     thumbnail: '/project3.jpeg',
+    visibleIn: ['default', 'mern', 'fullstack', 'web', 'backend'],
     descriptions: {
       default: [
         {
@@ -378,6 +383,7 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/m-umer-iqbal/P14-Melodify',
     demo: '',
     thumbnail: '/project4.jpeg',
+    visibleIn: ['frontend'],
     descriptions: {
       default: [
         {
@@ -441,6 +447,7 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/m-umer-iqbal/FYP-NERD',
     demo: '',
     thumbnail: '/project5.jpeg',
+    visibleIn: ['default', 'mern', 'fullstack', 'web', 'frontend'],
     descriptions: {
       default: [
         {
