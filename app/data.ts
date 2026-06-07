@@ -522,7 +522,7 @@ export const PROJECTS: Project[] = [
         {
           type: 'impact',
           content:
-            'Demonstrates software engineering, browser extension development, TypeScript, DOM manipulation, problem-solving, and leadership skills by building practical tools that address real-world frontend development challenges.',
+            'Demonstrates software engineering, browser extension development, DOM manipulation, problem-solving, and leadership skills by building practical tools that address real-world frontend development challenges.',
         },
       ],
 
